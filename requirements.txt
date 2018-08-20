@@ -1,0 +1,5 @@
+Django==2.1
+django-bootstrap-datepicker-plus==3.0.4
+django-widget-tweaks==1.4.2
+pytz==2017.2
+workdays==1.4

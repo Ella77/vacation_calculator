@@ -1,0 +1,29 @@
+
+<meta charset="UTF-8">
+
+
+{% extends 'blog/base.html' %}
+{% block content %}
+
+
+
+    <p>당신의 입사일은 {{ latest.jobstart}}입니다 </p>
+    <p>당신의 올해 남은 연차는 {{ d }}일 입니다.</p>
+    <p>당신이 작년까지 썼던 연차는 {{ p }}일 입니다.</p>
+    <p> 당신은 {{ dur }}일 썼어요</p>
+    <p>휴가신청을 위해서 +버튼을 </p>
+    <p>신청 확인,수정을 위해서 연필아이콘을 </p>
+    <p>입사일 변경은 톱니 아이콘을 누르세요 </p>
+
+    <p>휴가 산정법을 알고싶다면 help버튼을 누르세요</p>
+
+     <a class="top-menu"  href="{% url 'setting' %}"><span class="glyphicon glyphicon-cog "></span></a>
+     <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+     <a class="top-menu" href="{% url 'list' %}"><span
+                    class="glyphicon glyphicon-pencil"></span></a>
+
+     <a href=" {% url 'help' %}"><button type="submit" class="save btn btn-default">Help</button>
+     </a>
+
+
+{% endblock %}

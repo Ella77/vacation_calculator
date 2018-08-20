@@ -1,0 +1,23 @@
+
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    {% for post in forms %}
+        <div class="post">
+        <div class="date">
+            <p>{{ post.author }} 가 {{ post.start }} 일부터 {{ post.end }}까지 휴가!</p>
+
+            <p>{{ post.created_time.year}}년 {{post.created_time.day|linebreaksbr }}일에  신청했어요 </p>
+
+        </div>
+        </div>
+ {%  if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span
+                class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        {%  endif %}
+    {% endfor %}
+
+
+{% endblock %}
