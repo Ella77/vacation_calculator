@@ -1,0 +1,33 @@
+
+<meta charset="UTF-8">
+
+
+{% extends 'blog/base.html' %}
+{%  load static %}
+
+
+
+
+{% block content %}
+<link rel = "stylesheet" href ="{%  static 'css/static.css' %}">
+
+
+
+<table class="content">
+
+    <p>당신의 올해 남은 연차</p>
+     <span>  {{  used }}일 입니다.</span>
+    <p> 당신은 지금까지 {{ dur }}일 썼어요</p>
+
+    <p>당신이 작년까지 썼던 연차는 ?  {{ p }}일 입니다.</p>
+
+</table>
+
+{% endblock %}
+
+
+
+
+
+
+

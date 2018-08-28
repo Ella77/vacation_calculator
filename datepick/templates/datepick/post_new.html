@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+
+{% block content %}
+
+
+    <a href="{% url 'post_new_half' %}" class="save btn btn-primary">반차 신청</a>
+    <a href="{% url 'post_new_full' %}" class="save btn btn-primary">반차 외 신청</a>
+
+{% endblock %}

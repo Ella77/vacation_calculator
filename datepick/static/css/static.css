@@ -2,12 +2,45 @@
     float : left;
     width : 150px;
     margin-right: 50px;
-
-
+    margin-top : 120px;
+    background-color : lavender;
+    font-size :15px;
+    font-weight : bold;
 }
 
 .content{
+    margin-outside : 100px;
     margin-left : 200px;
+    text-align :left;
+    font-size : large;
+
+}
+
+.page-header{
+    text-align :center;
+    align-content: center;
+    color :#333333;
+}
+
+.table {
+
+
+    vertical-align:middle;
+}
+
+.circle{
+    width : 10px;
+    height : 10px;
+    background : red;
+    -moz-border-radius : 5px;
+    -webkit-border-radius : 5px;
+    border-radius: 5px;
+
+}
+
+.logo{
+    margin-top : 100px;
+    margin-left : 50px;
 
 
 }

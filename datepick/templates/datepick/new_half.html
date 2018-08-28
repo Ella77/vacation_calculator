@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class='form'>
+
+    <h1>날짜만 입력!   올해 {{ used }} 남았어요 </h1>
+        <p> 올해 {{ dur }}일 사용했어요 </p>
+    <script>
+    $(function () {
+        $('.datetime-input').datetimepicker({
+            format:'YYYY-MM-DD'
+
+        });
+    });
+</script>
+
+    </div>
+    <form action=""method="POST" class="half-form">{% csrf_token %}
+        <table border="1">
+        {{ form.as_table }}
+        </table>
+
+
+        <button type="submit" class="save btn btn-primary">Save</button>
+    </form>
+{% endblock %}

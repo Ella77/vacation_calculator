@@ -1,14 +1,23 @@
-
 {% extends 'blog/base.html' %}
 
 {% block content %}
 
     {% for post in forms %}
-        <div class="post">
-        <div class="date">
-            <p>{{ post.author }} 가 {{ post.start }} 일부터 {{ post.end }}까지 휴가!</p>
+        <div class="content">
+        <div class="content">
+            {% if post.status == 0 %}
+            <p>{{ post.author }} : {{ post.start }} ~ {{ post.end }}</p>
 
             <p>{{ post.created_time.year}}년 {{post.created_time.day|linebreaksbr }}일에  신청했어요 </p>
+            {% else %}
+                {% if post.status == 1 %}
+                <p>{{ post.author }}: {{ post.start }} 일 오전반차</p>
+
+                {% else %}
+                 <p>{{ post.author }}: {{ post.start }}일 오후반차</p>
+                 {% endif %}
+            {% endif %}
+
 
         </div>
         </div>
