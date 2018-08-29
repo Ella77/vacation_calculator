@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2903e75-6fa5-441c-ac91-60fb2710b18a" name="Default Changelist" comment="" />
+    <list default="true" id="a2903e75-6fa5-441c-ac91-60fb2710b18a" name="Default Changelist" comment="d">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/calculate.py" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/calculate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/popups.py" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/popups.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/static/css/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/static/css/static.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/list_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/list_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/new_full.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/new_full.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/new_half.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/new_half.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/popups/color_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/popups/color_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/popups/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/popups/popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/post_full.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/post_full.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/post_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/post_new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/post_new_year_full.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/post_new_year_full.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/replace_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/replace_new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/datepick/setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/datepick/setting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datepick/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/datepick/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vacancy/feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/vacancy/feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vacancy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/vacancy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vacancy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/vacancy/urls.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +41,10 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/vacancy$views.coverage" NAME="views Coverage Results" MODIFIED="1534742544462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datepick" />
     <SUITE FILE_PATH="coverage/vacancy$calculate.coverage" NAME="calculate Coverage Results" MODIFIED="1534756777285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datepick" />
+    <SUITE FILE_PATH="coverage/vacancy$popups.coverage" NAME="popups Coverage Results" MODIFIED="1534904202057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datepick" />
+    <SUITE FILE_PATH="coverage/vacancy$feedback.coverage" NAME="feedback Coverage Results" MODIFIED="1535442751447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vacancy" />
     <SUITE FILE_PATH="coverage/vacancy$urls.coverage" NAME="urls Coverage Results" MODIFIED="1534471846109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vacancy" />
+    <SUITE FILE_PATH="coverage/vacancy$mailsystem.coverage" NAME="mailsystem Coverage Results" MODIFIED="1535442006285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/datepick/templates/datepick" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -44,40 +77,53 @@
     <session id="1973111016">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Django Console" value="154" />
-          <entry key="html" value="3075" />
-          <entry key="py" value="10210" />
+          <entry key="Django Console" value="202" />
+          <entry key="css" value="3782" />
+          <entry key="dummy" value="6" />
+          <entry key="html" value="9251" />
+          <entry key="py" value="23113" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3075" />
-          <entry key="Python" value="10364" />
+          <entry key="CSS" value="3782" />
+          <entry key="HTML" value="9251" />
+          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="Python" value="23315" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="60" />
+          <entry key="css" value="8" />
+          <entry key="html" value="250" />
+          <entry key="png" value="5" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="74" />
+          <entry key="py" value="178" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="60" />
+          <entry key="CSS" value="8" />
+          <entry key="HTML" value="250" />
+          <entry key="Image" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="74" />
+          <entry key="Python" value="178" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -85,86 +131,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datepick/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="23" column="75" lean-forward="true" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <marker date="1534756777000" expanded="true" signature="267:272" ph="..." />
-                <marker date="1534756777000" expanded="true" signature="491:596" ph="..." />
-                <marker date="1534756777000" expanded="true" signature="590:591" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datepick/templates/blog/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vacancy/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="129" column="28" selection-start-line="129" selection-start-column="28" selection-end-line="129" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/datepick/calculate.py">
+        <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/list_admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/new_full.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/setting.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/confirm.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="246">
-              <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <marker date="1534760078000" expanded="true" signature="1651:2256" ph="..." />
-                <marker date="1534760078000" expanded="true" signature="2276:2281" ph="..." />
-              </folding>
+              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datepick/tests.py">
+        <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/help.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datepick/forms.py">
+        <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="36" column="78" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-                <marker date="1534757823000" expanded="true" signature="444:447" ph="..." />
-                <marker date="1534757823000" expanded="true" signature="449:455" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datepick/templates/blog/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+            <state relative-caret-position="170">
+              <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -172,25 +197,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datepick/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+            <state relative-caret-position="36">
+              <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
-                <marker date="1534760051000" expanded="true" signature="450:453" ph="..." />
-                <marker date="1534760051000" expanded="true" signature="1333:1334" ph="..." />
-                <marker date="1534760051000" expanded="true" signature="1438:1443" ph="..." />
-                <marker date="1534760051000" expanded="true" signature="2256:2948" ph="..." />
-                <marker date="1534760051000" expanded="true" signature="2325:2948" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="800:894" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="816:894" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="839:894" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="1301:1303" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="3453:3709" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="5076:5078" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="5443:5448" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="5906:5911" ph="..." />
+                <marker date="1535529844000" expanded="true" signature="6008:6009" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datepick/templates/blog/pick.html">
+        <entry file="file://$PROJECT_DIR$/vacancy/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+            <state relative-caret-position="215">
+              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+              <folding>
+                <element signature="e#639#671#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -200,40 +241,75 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
+        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>class selectdatewidget</find>
+      <find>status</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/datepick/templates/base.html" />
-        <option value="$PROJECT_DIR$/datepick/templates/pick.html" />
-        <option value="$PROJECT_DIR$/datepick/templates/registration/login.html" />
-        <option value="$PROJECT_DIR$/datepick/templates/blog/edit.html" />
-        <option value="$PROJECT_DIR$/datepick/admin.py" />
-        <option value="$PROJECT_DIR$/datepick/templates/blog/base.html" />
-        <option value="$PROJECT_DIR$/vacancy/urls.py" />
-        <option value="$PROJECT_DIR$/datepick/templates/blog/hy.html" />
-        <option value="$PROJECT_DIR$/datepick/templates/blog/setting.html" />
-        <option value="$PROJECT_DIR$/datepick/templates/django/forms/widgets/select_date.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/vacancy/settings.py" />
-        <option value="$PROJECT_DIR$/datepick/templates/blog/help.html" />
         <option value="$PROJECT_DIR$/datepick/templates/blog/pick.html" />
-        <option value="$PROJECT_DIR$/datepick/models.py" />
-        <option value="$PROJECT_DIR$/datepick/templates/blog/list.html" />
         <option value="$PROJECT_DIR$/datepick/inter.py" />
-        <option value="$PROJECT_DIR$/datepick/forms.py" />
+        <option value="$PROJECT_DIR$/datepick/serializers.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/static.css" />
+        <option value="$PROJECT_DIR$/datepick/static/static.css" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/help.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/full_new.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/half_new.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/post_new.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/post_new.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/new_half.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/list_admin.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/list.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/base.html" />
         <option value="$PROJECT_DIR$/datepick/templates/blog/main.html" />
-        <option value="$PROJECT_DIR$/datepick/views.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/blog/popup.html" />
+        <option value="$USER_HOME$/vacancy/lib/python3.6/site-packages/django_popup_view_field/widgets.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/popups/popup.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/popups/color_form.html" />
         <option value="$PROJECT_DIR$/datepick/calculate.py" />
+        <option value="$PROJECT_DIR$/datepick/popups.py" />
+        <option value="$PROJECT_DIR$/datepick/preview.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/post_new_full_year.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/edit.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/post_full.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/post_new.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/csv.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/csv.py" />
+        <option value="$PROJECT_DIR$/vacancy/FeedbackManager.py" />
+        <option value="$PROJECT_DIR$/vacancy/FeedbackMail.py" />
+        <option value="$PROJECT_DIR$/vacancy/settings.py" />
+        <option value="$PROJECT_DIR$/vacancy/Feedback.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/help.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/post_new_year_full.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/main.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/mailsystem.py" />
+        <option value="$PROJECT_DIR$/datepick/static/css/static.css" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/csv_admin.py" />
+        <option value="$PROJECT_DIR$/vacancy/feedback.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/new_half.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/confirm.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/new_full.html" />
+        <option value="$PROJECT_DIR$/datepick/models.py" />
+        <option value="$PROJECT_DIR$/datepick/forms.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/replace_new.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/base.html" />
+        <option value="$PROJECT_DIR$/datepick/views.py" />
+        <option value="$PROJECT_DIR$/vacancy/urls.py" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/list.html" />
+        <option value="$PROJECT_DIR$/datepick/templates/datepick/list_admin.html" />
       </list>
     </option>
   </component>
@@ -244,11 +320,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1804" />
-    <option name="y" value="47" />
-    <option name="width" value="1693" />
-    <option name="height" value="951" />
+    <option name="x" value="194" />
+    <option name="y" value="28" />
+    <option name="width" value="1680" />
+    <option name="height" value="953" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -271,7 +348,14 @@
               <item name="vacancy" type="b2602c69:ProjectViewProjectNode" />
               <item name="vacancy" type="462c0819:PsiDirectoryNode" />
               <item name="datepick" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vacancy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vacancy" type="462c0819:PsiDirectoryNode" />
+              <item name="datepick" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vacancy" type="b2602c69:ProjectViewProjectNode" />
@@ -284,12 +368,17 @@
               <item name="vacancy" type="462c0819:PsiDirectoryNode" />
               <item name="datepick" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="datepick" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vacancy" type="b2602c69:ProjectViewProjectNode" />
               <item name="vacancy" type="462c0819:PsiDirectoryNode" />
               <item name="vacancy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vacancy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vacancy" type="462c0819:PsiDirectoryNode" />
+              <item name="vacation_calculator" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -301,18 +390,22 @@
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/datepick/static" />
-      <recent name="$PROJECT_DIR$/datepick/templates/blog" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/datepick/templates/blog" />
       <recent name="$PROJECT_DIR$/datepick/templates/django/forms/widgets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/datepick" />
+      <recent name="$PROJECT_DIR$/datepick/templates" />
+      <recent name="$PROJECT_DIR$/datepick/templates/datepick" />
+      <recent name="$PROJECT_DIR$/datepick/templates/blog/popups" />
+      <recent name="$PROJECT_DIR$/datepick/static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -350,7 +443,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="feedback" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="vacancy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -363,7 +456,51 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vacancy/urls.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vacancy/feedback.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mailsystem" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vacancy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datepick/templates/datepick" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datepick/mailsystem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="popups" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vacancy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/datepick" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datepick/popups.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -420,15 +557,19 @@
     </configuration>
     <list>
       <item itemvalue="Django server.vacancy" />
-      <item itemvalue="Python.urls" />
       <item itemvalue="Python.calculate" />
       <item itemvalue="Python.views" />
+      <item itemvalue="Python.popups" />
+      <item itemvalue="Python.feedback" />
+      <item itemvalue="Python.mailsystem" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.feedback" />
+        <item itemvalue="Python.mailsystem" />
+        <item itemvalue="Python.popups" />
         <item itemvalue="Python.calculate" />
         <item itemvalue="Python.views" />
-        <item itemvalue="Python.urls" />
       </list>
     </recent_temporary>
   </component>
@@ -455,31 +596,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1804" y="47" width="1693" height="951" extended-state="0" />
+    <frame x="194" y="28" width="1680" height="953" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25439128" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23992674" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32945284" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5029104" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32947975" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3379791" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.50236964" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32945284" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32868758" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32945284" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3284974" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.53667057" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32983682" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.4216028" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3289941" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="R Graphics" order="4" weight="0.08121019" />
       <window_info anchor="right" id="R Packages" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.25075713" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.21794872" />
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" />
     </layout>
     <layout-to-restore>
@@ -540,99 +681,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.virtualenvs/py3_env/lib/python3.6/site-packages/django/forms/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="265" selection-start-line="265" selection-end-line="265" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1534499224000" expanded="true" signature="385:418" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/migrations/0002_employee.py" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="5" column="46" lean-forward="true" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/templates/django/forms/widgets/multiwidget.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vacancy/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_import_hook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/hy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/forms/widgets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="904" column="20" lean-forward="true" selection-start-line="904" selection-end-line="905" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/forms/templates/django/forms/widgets/select_date.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/input.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/multiple_hidden.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/input_option.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/multiwidget.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/radio.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/radio_option.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/splitdatetime.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/splithiddendatetime.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/text.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/textarea.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/url.html" />
-    <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/select_option.html" />
     <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/password.html" />
     <entry file="file://$PROJECT_DIR$/datepick/templates/django/forms/widgets/select_date.html" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/conf/__init__.py">
@@ -642,9 +690,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/migrations/0003_auto_20180820_0538.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/migrations/0003_auto_20180820_0538.py" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -666,135 +712,299 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/edit.html">
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/serializers.py" />
+    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/post_new.py" />
+    <entry file="file://$PROJECT_DIR$/datepick/inter.py" />
+    <entry file="file://$PROJECT_DIR$/vacation_calculator/calculate.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/vacancy/lib/python3.6/site-packages/django/db/models/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="173">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/help.html">
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/popups/color_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="105">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/base.html">
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/popups/popup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/setting.html">
+    <entry file="file://$USER_HOME$/vacancy/lib/python3.6/site-packages/django_popup_view_field/widgets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        <state relative-caret-position="30">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/inter.py">
+    <entry file="file://$USER_HOME$/vacancy/lib/python3.6/site-packages/django/contrib/auth/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="7" selection-end-column="30" />
+        <state relative-caret-position="317">
+          <caret line="53" column="7" lean-forward="true" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/vacancy/lib/python3.6/site-packages/django/db/models/fields/__init__.py">
+    <entry file="file://$PROJECT_DIR$/datepick/popups.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="1806" selection-start-line="1806" selection-end-line="1806" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="36" column="78" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <marker date="1534757823000" expanded="true" signature="444:447" ph="..." />
-            <marker date="1534757823000" expanded="true" signature="449:455" ph="..." />
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1535011526000" expanded="true" signature="143:148" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/pick.html">
+    <entry file="file://$PROJECT_DIR$/datepick/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/vacancy/lib/python3.6/site-packages/django/db/models/fields/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        <state relative-caret-position="359">
+          <caret line="1159" selection-start-line="1159" selection-end-line="1159" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
+    <entry file="file://$PROJECT_DIR$/datepick/preview.py" />
+    <entry file="file://$PROJECT_DIR$/vacancy/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/vacancy/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="129" column="28" selection-start-line="129" selection-start-column="28" selection-end-line="129" selection-end-column="28" />
+        <state relative-caret-position="200">
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/static/spoon-logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/calculate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1069">
+          <caret line="119" column="30" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1534909529000" expanded="true" signature="1664:2269" ph="..." />
+            <marker date="1534909529000" expanded="true" signature="2292:2297" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/datepick/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/static/css/static.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2070">
+          <caret line="138" column="25" selection-start-line="138" selection-start-column="25" selection-end-line="138" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/mailsystem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="50" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vacancy/feedback.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+          <folding>
+            <element signature="e#41#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/csv_admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/post_new_year_full.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datepick/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="23" column="75" lean-forward="true" selection-start-line="23" selection-start-column="75" selection-end-line="23" selection-end-column="75" />
+        <state relative-caret-position="-86">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-            <marker date="1534756777000" expanded="true" signature="267:272" ph="..." />
-            <marker date="1534756777000" expanded="true" signature="491:596" ph="..." />
-            <marker date="1534756777000" expanded="true" signature="590:591" ph="..." />
+            <marker date="1535528133000" expanded="true" signature="443:448" ph="..." />
+            <marker date="1535528133000" expanded="true" signature="874:879" ph="..." />
+            <marker date="1535528133000" expanded="true" signature="1586:1739" ph="..." />
+            <marker date="1535528133000" expanded="true" signature="1733:1739" ph="..." />
+            <marker date="1535528133000" expanded="true" signature="2968:2969" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/main.html">
+    <entry file="file://$PROJECT_DIR$/datepick/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        <state relative-caret-position="175">
+          <caret line="75" column="18" lean-forward="true" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1535528352000" expanded="true" signature="653:654" ph="..." />
+            <marker date="1535528352000" expanded="true" signature="654:659" ph="..." />
+            <marker date="1535528352000" expanded="true" signature="1870:1875" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/templates/blog/list.html">
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/replace_new.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="27" />
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/post_new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/post_full.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/new_half.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/setting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/new_full.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="33" column="12" lean-forward="true" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/help.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vacancy/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+          <folding>
+            <element signature="e#639#671#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datepick/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        <state relative-caret-position="36">
+          <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
-            <marker date="1534760051000" expanded="true" signature="450:453" ph="..." />
-            <marker date="1534760051000" expanded="true" signature="1333:1334" ph="..." />
-            <marker date="1534760051000" expanded="true" signature="1438:1443" ph="..." />
-            <marker date="1534760051000" expanded="true" signature="2256:2948" ph="..." />
-            <marker date="1534760051000" expanded="true" signature="2325:2948" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="800:894" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="816:894" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="839:894" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="1301:1303" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="3453:3709" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="5076:5078" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="5443:5448" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="5906:5911" ph="..." />
+            <marker date="1535529844000" expanded="true" signature="6008:6009" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datepick/calculate.py">
+    <entry file="file://$PROJECT_DIR$/datepick/templates/datepick/list_admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1534760078000" expanded="true" signature="1651:2256" ph="..." />
-            <marker date="1534760078000" expanded="true" signature="2276:2281" ph="..." />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
         </state>
       </provider>
     </entry>

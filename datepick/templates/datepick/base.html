@@ -1,4 +1,6 @@
-{% load static %}
+{% load staticfiles %}
+
+
 <html>
 <head>
     <title>Spoon Vacation</title>
@@ -9,7 +11,7 @@
     <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap-datetimepicker/4.17.44/css/bootstrap-datetimepicker.min.css"
           rel="stylesheet">
-    <link rel = "stylesheet" href = "{%  static 'css/static.css' %}">
+    <link rel = "stylesheet" href = "{%  static 'css/static.css' %}" type="text/css" media="all"/>
     <script src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdn.bootcss.com/moment.js/2.17.1/moment.min.js"></script>
@@ -19,7 +21,7 @@
 
 <div class ="logo">
 
-<a href="/main" class="top-menu"> <img src="../../static/spoon-logo.png"
+<a href="/" class="top-menu"> <img src="../../static/spoon-logo.png"
     width ="400"
                                        height ="100"></a></div>
 
@@ -27,37 +29,45 @@
 
     {% if user.is_authenticated %}
 
-        <p class="top-menu">{{ user.username }}님으로 로그인하셨습니다. <a href="{% url 'logout' %}" class="top-menu"><span
+        <p class="right-menu">{{ user.username }}님으로 로그인하셨습니다. <a href="{% url 'logout' %}" class="right-menu"><span
                 class="glyphicon glyphicon-log-out"></span></a></p>
 
 
     {% else %}
-        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+        <a href="{% url 'login' %}" class="login"><span class="glyphicon glyphicon-lock"></span></a>
     {% endif %}
 
 
-    <h1>열심히 일한 {{ user.username }}, 휴가가자! <a href="/main" class="top-menu"><span class="glyphicon glyphicon-home"></span></a></h1>
-    <span/><h3>당신의 입사일 : {{ latest.jobstart }}</h3></span>
-</span></div>
+    <h1>스푼에서 함께한 당신, 휴가가자! <a href="/" class="top-menu"><span class="glyphicon glyphicon-home"></span></a></h1>
+
+</span>
 
 
 
 <div class="nav">
 
-        <ul class="nav-list">
-            <li class = 'nav-item'><a href="/list" class="nav-link">신청 확인/수정</a>
-             <a  href="{% url 'list' %}"><span
-                    class="glyphicon glyphicon-pencil"></span></a></li>
 
-  <li class = 'nav-item'><a href="/setting" class="nav-link">입사일 설정</a>
-             <a  href="{% url 'setting' %}"><span
-                    class="glyphicon glyphicon-cog"></span></a></li>
- <li class = 'nav-item'><a href="/post/new/" class="nav-link">휴가 신청</a>
-             <a  href="{% url 'post_new' %}"><span
-                    class="glyphicon glyphicon-cog"></span></a></li>
-             <li class = 'nav-item'><a href="/help" class="nav-link">휴가 산정법</a>
-             <a  href="{% url 'help' %}"><span
-                    class="glyphicon glyphicon-question-sign"></span></a></li>
+        <ul class="nav-list">
+             {% if user.is_superuser %}
+                <li class='nav-item'><a href="/list_admin/" class="nav-link">관리자 전용 페이지<strong
+                        class="glyphicon glyphicon-calendar"></strong></a></li>
+              {% endif %}
+             <li class = 'nav-item'><a href="/main/" class="nav-link"> 통계 확인<strong
+                   class="glyphicon glyphicon-cog"></strong></a></li>
+
+ <li class = 'nav-item'><a href="/post/new/" class="nav-link">휴가 신청<strong
+                    class="glyphicon glyphicon-cog"></strong></a></li>
+
+  <li class = 'nav-item'><a href="/replace/new/" class="nav-link">대체 휴가 신청<strong
+                    class="glyphicon glyphicon-cog"></strong></a></li>
+            <li class = 'nav-item'><a href="/list/" class="nav-link">신청 확인/수정<strong
+                    class="glyphicon glyphicon-pencil"></strong></a></li>
+             <li class = 'nav-item'><a href="/help" class="nav-link">휴가 산정법<strong
+                    class="glyphicon glyphicon-question-sign"></strong></a></li>
+
+
+
+
         </ul>
     </div>
 <div class="content container">

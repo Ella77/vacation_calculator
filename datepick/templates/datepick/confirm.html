@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+
+<meta charset="UTF-8">
+{% extends 'datepick/base.html' %}
+
+{% block content %}
+ <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=ellie@mykoon.com,jun@mykoon.com&tf=1" class="save btn btn-primary">메일</a>
+  <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="1014925332048-6uemeb9ni620fsc0p6c11l49rt42n3tc.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+  </head>
+  <body>
+
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+        function init() {
+  gapi.load('auth2', function() { // Ready. });
+}
+      function onSignIn(googleUser){
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
+  </body>
+{% endblock %}

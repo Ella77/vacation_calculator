@@ -1,34 +1,77 @@
-
-{% extends 'blog/base.html' %}
+<meta charset="UTF-8">
+{% extends 'datepick/base.html' %}
 
 {% block content %}
+    <div class="apply">
+    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=ellie@mycoon.com,jun@mykoon.com&tf=1" class="save btn btn-primary">메일 보내기</a>
+    </div>
+    <h3>일반 휴가 내역</h3>
 
-    {% for post in forms %}
-        <div class="content">
-        <div class="content">
-            {% if post.status == 0 %}
-            <p>{{ post.start }} 일부터 {{ post.end }}까지 휴가!</p>
+         <div class ="table">
+          <ol>
+    {% for post in forms.reverse %}
 
-            <p>{{ post.created_time.year}}년 {{post.created_time.day|linebreaksbr }}일에  신청했어요 </p>
+    {% if post.replace_status == 0 %}
+
+      {% if post.status == 0 %}
+
+
+
+            <li>{{ post.start }} ~ {{ post.end }}</li>
+    <ul>
+            <li>{{ post.created_time.year }}년 {{ post.created_time.day|linebreaksbr }}일에 신청했어요 </li>
+    </ul>
             {% else %}
-                {% if post.status == 1 %}
-                <p>{{ post.start }} 일 오전반차</p>
+            {% if post.status == 1 %}
+                <li>{{ post.start }} 일 오전반차</li>
 
-                {% else %}
-                 <p>{{ post.start }}일 오후반차</p>
-                 {% endif %}
-             {% endif %}
+            {% else %}
+                <li>{{ post.start }}일 오후반차</li>
+            {% endif %}
 
-
-        </div>
-        </div>
- {%  if user.is_authenticated %}
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span
+        {% endif %}
+  <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span
                 class="glyphicon glyphicon-pencil"></span></a>
         <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
 
+ {% endif %}
+
+
+        {% endfor %}
+            </ol>
+  </div>
+
+
+        <h3>대체 휴가 내역</h3>
+
+
+ <div class="table">
+ <ol>
+    {% for post in forms.reverse %}
+
+    {% if post.replace_status != 0 %}
+
+            {% if post.replace_status == 1 %}
+
+
+            <li>  {{ post.start }}~ {{ post.end }} 부터 {{ post.replace_day }} 일반 대체휴가 </li>
+            {% elif post.replace_status == 2 %}
+                <li> {{ post.start }}~ {{ post.end }} 부터 {{ post.replace_day }} 매직데이 대체휴가 </li>
+
+
+
+            {% endif %}
+   <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span
+                class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+
+
+
 {% endif %}
+
+
+
     {% endfor %}
-
-
+</ol>
+  </div>
 {% endblock %}

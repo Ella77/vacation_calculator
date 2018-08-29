@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_popup_view_field',
     'datepick',
+    'email',
+
 
 ]
 
@@ -108,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -129,3 +132,16 @@ LOGOUT_REDIRECT_URL ='/main'
 STATICFILES_DIRS = (
     "vacancy/datepick/static",
 )
+#
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'ella@mykoon.com'
+# EMAIL_HOST_PASSWORD = 'sjbang246'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'ella <ella@mykoon.com>'
+#
+#
+# ADMINS = (
+#     ('You', 'ella@mykoon.com'),
+# )
+# MANAGERS = ADMINS

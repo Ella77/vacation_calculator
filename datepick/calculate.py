@@ -12,7 +12,7 @@ def Calculate(d0):
     # d0 = datetime(2018, 8, 1)
     # 올해말 기준 퇴사일 : 2018.12.1일기준
     #     d1 = datetime(2018, 12, 1)
-    d1 = date(2018, 12, 31)
+    d1 = date(timezone.now().year,12,31)
     if (d0.month == 1) & (d0.day == 1):
         a5 = 1
     else:
@@ -116,5 +116,6 @@ def Calculate_year(d0):
 
 
 
-def duration(d0,d1):
-    return (d0-d1).days
+def Calculate_keep(d0):
+    d1 = date(timezone.now().year,timezone.now().month,timezone.now().day)
+    return (d1-d0).days

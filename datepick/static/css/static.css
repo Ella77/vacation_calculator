@@ -1,16 +1,49 @@
-.nav{
+.nav {
     float : left;
-    width : 150px;
-    margin-right: 50px;
+    width : 200px;
+
     margin-top : 120px;
-    background-color : lavender;
-    font-size :15px;
+    background-color : orange;
+    font-size :20px;
     font-weight : bold;
+    color : #fff;
+
+}
+
+.nav-list , .nav span {
+       list-style : none;
+ color : #fff;
+    font-palette : #fff;
+
+
+}
+.nav-item{
+     color : #fff;
+    font-palette : #fff;'
+}
+
+.nav-link{
+ color : #fff;
+    font-palette : #fff;
+}
+.right-menu{
+    text-align : right;
+    margin-top : 10px;
+    padding-right : 20px;
+    text-decoration: underline;
+    font-family : "DejaVu Sans" , "돋움";
+    font-style: oblique;
+}
+
+h1{
+    font-family : "DecoType Naskh";
+    font-style :normal;
 }
 
 .content{
-    margin-outside : 100px;
-    margin-left : 200px;
+    margin-top : 130px;
+    padding-outside : 100px;
+    padding-left : 200px;
     text-align :left;
     font-size : large;
 
@@ -43,4 +76,68 @@
     margin-left : 50px;
 
 
+}
+
+
+.apply{
+
+    text-align :center;
+   padding-top : 30px;
+}
+
+
+.help{
+    text-align:center;
+    margin-left: 20%;
+}
+
+
+
+a{
+    color: #fff;
+
+}
+
+a > span {
+    color: orange;
+}
+a > span:hover{
+    color: black;
+}
+
+a:hover {
+    color : black;
+}
+a:focus{
+    color : black;
+}
+.nav-help{
+
+
+    width : 200px;
+    height : 100px;
+ background-color : orange;
+
+}
+
+
+.apply > a{
+    background-color: orange;
+    color : #fff!important;
+}
+.apply > a:hover{
+    background-color: black;
+    border-color : #333333;
+    color : orange!important;
+
+
+}
+
+.login{
+     margin-top : 130px;
+    padding-outside : 100px;
+    padding-left : 200px;
+    text-align :left;
+    font-size : large;
+    zoom : 500%;
 }

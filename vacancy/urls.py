@@ -11,19 +11,25 @@ Class-based views
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    2. Add a URL to urlpatterns:  path('datepick/', include('datepick.urls'))
 """
 from django.contrib import admin
 from django.urls import path
-from datepick.views import post_new,main,list,post_edit,post_remove, help,setting
-from django.conf.urls import url
+from datepick.views import *
+from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
+from .feedback import MailToAdmin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$',main,name='main'),
-    url(r'^post/new/$', post_new, name='post_new'),
+    url(r'^replace/new/$', replace_new, name='replace_new'),
+    url(r'^post/new/year/full$', post_new_year_full,name= 'post_new_year_full'),
+    url(r'^post/full$', post_full, name='post_full'),
+    url(r'^post/new/half$', post_new_half, name='post_new_half'),
+    url(r'^post/new/full$',post_new_full,name='post_new_full'),
+    url(r'^post/new/$',post_new, name= 'post_new'),
     url(r'^main/$', main, name='main'),
+    url(r'^list_admin/$', list_admin,name='list_admin'),
     url(r'^list/$', list,name='list'),
     url(r'^accounts/login/$', auth_views.LoginView.as_view(),name='login'),
     url(r'^accounts/logout/$', auth_views.LogoutView.as_view(),name='logout'),
@@ -31,5 +37,12 @@ urlpatterns = [
     url(r'^post/(?P<pk>\d+)/remove/$',post_remove,name= 'post_remove'),
     url(r'^help/$', help, name='help'),
     url(r'^setting/$', setting,name='setting'),
+    url(r'^list/admin/$',list,name='list'),
+    url(r'^django_popup_view_field/',include('django_popup_view_field.urls')
+        ),
+
+    url(r'^ContactToAdmin$', MailToAdmin),
+    url(r'^$',confirm,name='confirm'),
+
 
 ]

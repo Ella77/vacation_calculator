@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<meta charset="UTF-8">
+{% extends 'datepick/base.html' %}
+
+
+
+{% block content %}
+    <span class="help"> 휴가 기간이 말일이 걸쳐있다면 </span>
+   <span> <strong> "말일 포함 신청"</strong>을 눌러주세요</span>
+
+        <div class="apply">
+    <a href="{% url 'post_new_full' %}" class="save btn btn-primary">월차 신청</a>
+    <a href="{% url 'post_new_year_full' %}" class="save btn btn-primary">말일 포함 신청</a>
+        </div>
+{% endblock %}

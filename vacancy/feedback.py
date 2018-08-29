@@ -3,17 +3,16 @@
 from django.http import HttpResponse
 import smtplib
 import email
-from email.mine.text import MIMEText
-from email.mine.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 def MailToAdmin(request):
     adminEmailHost = "gmail.com"
-    adminEmailId = "stories282"
-    adminEmailPassword = "go369369"
+    adminEmailId = "ksjbang"
+    adminEmailPassword = "sjbang246"
 
-    customerEmailAddress = request.GET.get('email', 'N/A')
-    customerFeedbackSubject = request.GET.get('subject', 'N/A')
-    customerFeedbackMessage = request.GET.get('message', 'N/A')
+    customerEmailAddress = 'ella@mykoon.com'
+    customerFeedbackSubject = 'hello'
+    customerFeedbackMessage = 'test'
 
     # print customerEmailAddress
     # print customerFeedbackSubject
@@ -36,7 +35,6 @@ def MailToAdmin(request):
                              str(emailMessage['Subject'] + '\n' + emailMessage['Body']))
     smtpMessageSend.quit()
 
-    print
-    str(emailMessage)
+    print(str(emailMessage))
 
-    return HttpResponse("<script>alert('ok');location.href='/';</script>")
+    return HttpResponse("<script>alert('메일 전송 완료');location.href='/';</script>")

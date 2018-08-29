@@ -1,10 +1,11 @@
-{% extends 'blog/base.html' %}
+<meta charset="UTF-8">
+{% extends 'datepick/base.html' %}
 
 
 {% block content %}
 
-
+    <div class="apply">
     <a href="{% url 'post_new_half' %}" class="save btn btn-primary">반차 신청</a>
     <a href="{% url 'post_new_full' %}" class="save btn btn-primary">반차 외 신청</a>
-
+    </div>
 {% endblock %}
