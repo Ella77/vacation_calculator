@@ -34,6 +34,7 @@ def post_new_full(request):
         if form.is_valid():
             post = form.save(commit =False)
             post.author = request.user
+            Promise.calc_bus_day(post)
             post.save()
 
             return redirect ('list')
@@ -117,7 +118,10 @@ def post_edit(request,pk):
             post = form.save(commit = False)
             post.author = request.user
             post.save()
-            return redirect('list')
+            if request.user.is_superuser:
+                return redirect('list_admin')
+            else :
+                return redirect('list')
     else:
         form = PromiseForm(instance = post)
     return render(request, 'datepick/edit.html', {'form':form})
@@ -126,7 +130,10 @@ def post_edit(request,pk):
 def post_remove(request,pk):
     post = get_object_or_404(Promise, pk=pk)
     post.delete()
-    return redirect('list')
+    if request.user.is_superuser:
+        return redirect('list_admin')
+    else:
+        return redirect('list')
 
 def help(request):
     return render(request, 'datepick/help.html')

@@ -27,13 +27,17 @@ class PromiseForm(forms.ModelForm):
     class Meta:
         model = Promise
         fields = ('start', 'end')
+        labels ={
+            'start': '휴가 시작일',
+            'end': '휴가 끝나는날',
+        }
         widgets = {
             'start': forms.DateInput(attrs={'class': 'datetime-input',
                                             'style': 'border-color: blue;',
-                                            'placeholder': '휴가 시작일'}),
+                                            'placeholder': '클릭'}),
             'end': forms.DateInput(attrs={'class': 'datetime-input',
                                           'style': 'border-color: red;',
-                                          'placeholder': '휴가 끝나는 '}),
+                                          'placeholder': '클릭'}),
 
         }
 
@@ -43,6 +47,9 @@ class EmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
         fields = ('jobstart',)
+        labels = {
+            'jobstart': '입사일',
+        }
         widgets = {
             'jobstart': SelectDateWidget(years = range(timezone.now().year, 2000, -1))
         }
@@ -53,6 +60,10 @@ class HalfForm(forms.ModelForm):
     class Meta:
         model = Promise
         fields = ('start', 'status')
+        labels = {
+            'start': '반차 일자',
+            'status': '시간대',
+        }
         widgets = {
             'start': forms.DateInput(attrs={'class': 'datetime-input',
                                             'style': 'border-color: blue;',
@@ -72,6 +83,12 @@ class ReplaceForm(forms.ModelForm):
     class Meta :
         model = Promise
         fields = ('start', 'end', 'replace_day','replace_status')
+        labels= {
+            'start': '대체근무 시작',
+                'end': '대체근무 종료',
+            'replace_day': '근무날',
+            'replace_status': '휴가 종류',
+        }
         widgets = {
             'start' : forms.DateInput(attrs={'class': 'datetime-input',
                                             'style': 'border-color: blue;',

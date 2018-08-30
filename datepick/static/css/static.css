@@ -7,6 +7,8 @@
     font-size :20px;
     font-weight : bold;
     color : #fff;
+    position : -webkit-sticky;
+    position:sticky;
 
 }
 
@@ -55,11 +57,6 @@ h1{
     color :#333333;
 }
 
-.table {
-
-
-    vertical-align:middle;
-}
 
 .circle{
     width : 10px;
@@ -140,4 +137,17 @@ a:focus{
     text-align :left;
     font-size : large;
     zoom : 500%;
+}
+
+.table{
+
+
+
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table th,td{
+    border : 1px solid orange;
 }

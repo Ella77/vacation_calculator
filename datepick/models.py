@@ -27,12 +27,12 @@ class Promise(models.Model):
     created_time = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS_CHOICES, default=0)
-    replace_day =models.FloatField()
+    replace_day =models.FloatField(default=0)
     replace_status = models.IntegerField(choices=CHOICES,default =0)
 
     def calc_bus_day(self):
 
-        self.bus_day_count = numpy.busday_count(self.start, self.end, holidays=numpy.busdaycalendar.holidays)
+        self.bus_day_count = numpy.busday_count(self.start, self.end+timedelta(1))
 
     def check_overlap(self, fixed_start, fixed_end, new_start, new_end):
         overlap = False
