@@ -21,7 +21,7 @@ SELECT_REASON = (
 
 
 class Promise(models.Model):
-    start = models.DateField(blank = False)
+    start = modaddadels.DateField(blank = False)
     end = models.DateField(default=start)
     bus_day_count = models.IntegerField(default=0)
     created_time = models.DateTimeField(default=timezone.now)
