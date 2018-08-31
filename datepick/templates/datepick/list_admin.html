@@ -5,6 +5,10 @@
    <div class="apply">
    <a href="confirm.html" class="save btn-btn primary">메일 보내기</a>
    <a href="confirm.html" class="save btn-btn primary">캘린더로 보</a>
+{% for a in members %}
+<p> {{ user.username }}</p>
+    <p>{{ a.jobstart }}</p>
+{% endfor %}
    </div>
 
 
@@ -17,15 +21,15 @@
           <th>
               신청자
           </th>
-          <th>신청날짜</th>
-          <th>사용날짜</th>
-              <th>신청날짜</th>
+          <th>휴가일수</th>
+          <th>휴가일</th>
+              <th>신청일</th>
           <th>수정</th>
           <th>삭제 </th></tr>
    {% for post in forms.reverse%}
          <tr>
 
-    {% if post.status == 0 and post.replace_status == 0 %}
+    {% if post.status == 0 and post.replace_day == 0  %}
 
              <td>{{  post.author}}</td>
         <td>{{ post.bus_day_count }}</td>
@@ -43,13 +47,15 @@
 
 
          <tr>
-           {% if post.status != 0 %}
+           {% if post.status != 0  and post.status != 4 %}
 
              <td>{{  post.author}}</td>
         {% if post.status == 1 %}
-        <td>오전 반차</td>
-            {% else %}
+        <td>풀타임</td>
+            {% elif post.status == 2 %}
 
+            <td>오전 반차</td>
+            {% elif post.status == 3 %}
             <td>오후 반차</td>
            {% endif %}
           <td>{{ post.start }} </td>
@@ -71,7 +77,7 @@
 </table>
          </div>
 <div class="table">
-        <h3>대체 휴가 내역</h3>
+        <h3>대체 근무, 특별 휴가 내역</h3>
 
 
 
@@ -80,25 +86,20 @@
           <th>
               신청자
           </th>
-          <th>신청날짜</th>
-          <th>사용날짜</th>
-              <th>신청날짜</th>
+          <th>휴가신청수</th>
+          <th>근무날</th>
+              <th>신청일</th>
           <th>수정</th>
           <th>삭제 </th>
           </tr>
   {% for post in forms.reverse%}
          <tr>
-    {% if post.replace_status != 0 %}
 
+ {% if post.replace_day != 0 %}
              <td>{{  post.author}}</td>
 
+              <td>{{ post.replace_day }}</td>
 
-        {% if post.replace_status == 1 %}
-        <td>{{ post.replace_day }}</td>
-            {% else %}
-
-            <td>매직 {{ post.replace_day }}</td>
-           {% endif %}
           <td>{{ post.start }} ~{{ post.end }} </td>
 
             <td>{{ post.created_time.year }}.{{ post.created_time.month }}.{{ post.created_time.day|linebreaksbr }} </td>
@@ -109,6 +110,25 @@
  </td>
          {% endif %}
          </tr>
+
+      <tr>
+      {%  if post.status == 4 %}
+       <td>{{  post.author}}</td>
+
+              <td>{{ post.reason }}</td>
+
+          <td>{{ post.start }} ~{{ post.end }} </td>
+
+            <td>{{ post.created_time.year }}.{{ post.created_time.month }}.{{ post.created_time.day|linebreaksbr }} </td>
+
+<td> <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span
+         class="glyphicon glyphicon-pencil"></span></a></td>
+    <td>   <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+ </td>
+         {% endif %}
+
+
+      </tr>
     {% endfor %}
 </table>
 

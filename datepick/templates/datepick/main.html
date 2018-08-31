@@ -13,7 +13,7 @@
 
 
 
-<table class="content">
+<dl class="statistics">
 
     <dt>당신의 입사일</dt>
         <dd> {{  latest.jobstart }}</dd>
@@ -25,11 +25,11 @@
         <h3>당신의 휴가 사용량</h3>
     <p> 당신은 올해 {{ dur }}일 썼어요</p>
     <p> 대체 휴가로 얻은 {{ replace }}일도 있어요.</p>
-
+    <p> 연차 외 특별휴가로 쓴 {{ special }}일도 있네요</p>
 
 <h3>{{ user.username }}이 스푼과 함께한 {{ keep }} 날은 어떠셨나요?</h3>
 </dl>
-</table>
+
 
 {% endblock %}
 

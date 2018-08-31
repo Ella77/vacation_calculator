@@ -22,11 +22,13 @@ from .feedback import MailToAdmin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^replace/new/$', replace_new, name='replace_new'),
+    url(r'^post/replace/new/$', replace_new, name='replace_new'),
     url(r'^post/new/year/full$', post_new_year_full,name= 'post_new_year_full'),
     url(r'^post/full$', post_full, name='post_full'),
     url(r'^post/new/half$', post_new_half, name='post_new_half'),
     url(r'^post/new/full$',post_new_full,name='post_new_full'),
+    url(r'^post/new/special$',post_special,name = 'post_special'),
+    url(r'^post/new/special_new$',post_special_new,name='post_special_new'),
     url(r'^post/new/$',post_new, name= 'post_new'),
     url(r'^main/$', main, name='main'),
     url(r'^list_admin/$', list_admin,name='list_admin'),

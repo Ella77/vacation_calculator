@@ -1,7 +1,11 @@
+@import
+url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@import
+url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 .nav {
     float : left;
-    width : 200px;
-
+    width : 240px;
+    height: 300px;
     margin-top : 120px;
     background-color : orange;
     font-size :20px;
@@ -9,10 +13,18 @@
     color : #fff;
     position : -webkit-sticky;
     position:sticky;
-
+      padding :20px;
+    border-right:10px solid orange;
+    font-family : 'Hanna',fantasy;
 }
 
+.li {
+    margin-bottom : 30px;
+    line-height: 30px;
+}
 .nav-list , .nav span {
+    margin-left: -20px;
+
        list-style : none;
  color : #fff;
     font-palette : #fff;
@@ -28,25 +40,35 @@
  color : #fff;
     font-palette : #fff;
 }
-.right-menu{
+.right-menu {
     text-align : right;
     margin-top : 10px;
     padding-right : 20px;
     text-decoration: underline;
-    font-family : "DejaVu Sans" , "돋움";
+    font-family : 'Hanna',fantasy;
     font-style: oblique;
+    border-bottom:10px solid orange;
 }
 
+.title{
+    text-align:right;
+    margin-top : -70px;
+     font-family : 'Hanna',fantasy;
+
+}
 h1{
     font-family : "DecoType Naskh";
     font-style :normal;
 }
 
 .content{
+     font-family : 'Hanna';
+    font-weight: lighter;
+    font-style: normal;
     margin-top : 130px;
     padding-outside : 100px;
     padding-left : 200px;
-    text-align :left;
+    text-align :center;
     font-size : large;
 
 }
@@ -55,6 +77,7 @@ h1{
     text-align :center;
     align-content: center;
     color :#333333;
+
 }
 
 
@@ -69,7 +92,7 @@ h1{
 }
 
 .logo{
-    margin-top : 100px;
+    margin-top : 90px;
     margin-left : 50px;
 
 
@@ -140,9 +163,10 @@ a:focus{
 }
 
 .table{
+    align-items: center;
+    align-content:center;
 
-
-
+    text-align:center;
   width: 100%;
   text-align: center;
   border-collapse: collapse;
@@ -150,4 +174,7 @@ a:focus{
 
 .table th,td{
     border : 1px solid orange;
+}
+.statistics{
+    text-align:left;
 }

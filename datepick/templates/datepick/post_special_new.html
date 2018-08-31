@@ -1,36 +1,36 @@
 <meta charset="UTF-8">
-{% extends 'datepick/base.html' %}
+{% extends 'datepick/main.html' %}
 {% block content %}
-   <div class="apply">
+<div class="apply">
     <a href="{% url 'post_new_half' %}" class="save btn btn-primary">하루 신청</a>
     <a href="{% url 'post_new_full' %}" class="save btn btn-primary">장기 신청</a>
      <a href="{% url 'post_special' %}" class="save btn btn-primary">특별 신청</a>
-    </div>
+
 
     <h3>
-        <p> 휴가 시작하는 날과 끝나는 날을 입력해주세요 </p> </h3>
-    <script>
+        <p> 특별신청이란 기타 사유로 연차일을 소모하지 않고 신청하는 휴가를 말합니다. 사유에 따라 유급,무급휴가가 나뉠 수 있습니다.   </p> </h3>
+ <script>
     $(function () {
         $('.datetime-input').datetimepicker({
             format:'YYYY-MM-DD'
 
         });
     });
-</script>
+ </script> </div>
+ <form action=""method="POST" class="replace-form">{% csrf_token %}
 
-
-    <form action=""method="POST" class="promise-form">{% csrf_token %}
         <table border="1">
         {{ form.as_table }}
         </table>
 
 
-         <script type='text/javascript'>
+
+  <script type='text/javascript'>
 
 function foo() {
 
 
-    var user_choice = window.confirm('휴가 신청하시겠습니까?');
+    var user_choice = window.confirm('특별 휴가 신청하시겠습니까?');
 
 
 if(user_choice==true) {
@@ -50,5 +50,4 @@ return false;}
         <input type="submit" class="save btn-btn primary" onClick="return foo()" >
 
     </form>
-
 {% endblock %}

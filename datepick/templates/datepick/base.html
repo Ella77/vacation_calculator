@@ -26,8 +26,9 @@
                                        height ="100"></a></div>
 
 <span class="page-header">
-
+<h1 class="title">스푼에서 함께한 당신, 휴가가자! <a href="/" class="top-menu"><span class="glyphicon glyphicon-home"></span></a></h1>
     {% if user.is_authenticated %}
+
 
         <p class="right-menu">{{ user.username }}님으로 로그인하셨습니다. <a href="{% url 'logout' %}" class="right-menu"><span
                 class="glyphicon glyphicon-log-out"></span></a></p>
@@ -38,7 +39,6 @@
     {% endif %}
 
 
-    <h1>스푼에서 함께한 당신, 휴가가자! <a href="/" class="top-menu"><span class="glyphicon glyphicon-home"></span></a></h1>
 
 </span>
 
@@ -58,8 +58,7 @@
  <li class = 'nav-item'><a href="/post/new/" class="nav-link">휴가 신청<strong
                     class="glyphicon glyphicon-cog"></strong></a></li>
 
-  <li class = 'nav-item'><a href="/replace/new/" class="nav-link">대체 휴가 신청<strong
-                    class="glyphicon glyphicon-cog"></strong></a></li>
+
             <li class = 'nav-item'><a href="/list/" class="nav-link">신청 확인/수정<strong
                     class="glyphicon glyphicon-pencil"></strong></a></li>
              <li class = 'nav-item'><a href="/help" class="nav-link">휴가 산정법<strong

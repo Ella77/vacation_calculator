@@ -12,6 +12,7 @@ from django_popup_view_field.fields import PopupViewField
 from . popups import PopupView
 import numpy
 
+
 STATUS_CHOICES = (
     (1, "오전 반차"),
     (2, "오후 반차"),
@@ -22,6 +23,9 @@ CHOICES = (
     (2, "매직 데이대체"),
 )
 
+SELECT_REASON = (
+    (1, "매직데이"),
+)
 class PromiseForm(forms.ModelForm):
 
     class Meta:
@@ -60,8 +64,9 @@ class HalfForm(forms.ModelForm):
     class Meta:
         model = Promise
         fields = ('start', 'status')
+
         labels = {
-            'start': '반차 일자',
+            'start': '휴가 일자',
             'status': '시간대',
         }
         widgets = {
@@ -82,11 +87,11 @@ class ConfirmForm(forms.Form):
 class ReplaceForm(forms.ModelForm):
     class Meta :
         model = Promise
-        fields = ('start', 'end', 'replace_day','replace_status')
+        fields = ('start', 'end', 'replace_day')
         labels= {
             'start': '대체근무 시작',
-                'end': '대체근무 종료',
-            'replace_day': '근무날',
+            'end': '대체근무 종료',
+            'replace_day': '휴가로 얻을 날짜',
             'replace_status': '휴가 종류',
         }
         widgets = {
@@ -96,7 +101,36 @@ class ReplaceForm(forms.ModelForm):
             'end': forms.DateInput(attrs={'class': 'datetime-input',
                                           'style': 'border-color: red;',
                                           'placeholder': '대체근무했던 끝나는 날'}),
-            'replace_status': forms.Select(choices=CHOICES),
            'replace_day' : forms.NumberInput(attrs={'placeholder':'휴가로 얻을 일'}),
         }
 
+# class TextForm(forms.Form):
+#     char_field_with_list = forms.CharField(required=True)
+#
+#     def __init__(self, *args, **kwargs):
+#         _country_list = kwargs.pop('data_list', None)
+#         super(TextForm, self).__init__(*args, **kwargs)
+#
+#         # the "name" parameter will allow you to use the same widget more than once in the same
+#         # form, not setting this parameter differently will cuse all inputs display the
+#         # same list.
+#         self.fields['char_field_with_list'].widget = SpecialForm(data_list=_country_list, name='country-list')
+
+class SpecialForm(forms.ModelForm):
+    class Meta:
+        model = Promise
+        fields = ('start','end','reason',)
+        labels = {
+            'start': '휴가 시작일',
+            'end': '휴가 끝나는 날' ,
+        'reason' : '사유',
+        }
+        widgets = {
+            'start': forms.DateInput(attrs={'class': 'datetime-input',
+                                            'style': 'border-color: blue;',
+                                            'placeholder': '클릭'}),
+            'end': forms.DateInput(attrs={'class': 'datetime-input',
+                                          'style': 'border-color: red;',
+                                          'placeholder': '클릭'}),
+        'reason' : forms.Select(choices = SELECT_REASON),
+        }

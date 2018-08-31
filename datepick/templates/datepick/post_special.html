@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+{% extends 'datepick/main.html' %}
+{% block content %}
+
+<div class="apply">
+    <a href="{% url 'post_new_half' %}" class="save btn btn-primary">하루 신청</a>
+    <a href="{% url 'post_new_full' %}" class="save btn btn-primary">장기 신청</a>
+     <a href="{% url 'post_special' %}" class="save btn btn-primary">특별 신청</a>
+    </div>
+
+    <div class="apply">
+        <a href="{% url 'post_special_new' %}" class="save btn btn-primary">특별 휴가 신청<strong class="glyphicon glyphicon-calendar"></strong></a>
+     <a href="{% url 'replace_new' %}" class="save btn btn-primary">대체근무 입력<strong class="glyphicon glyphicon-cog"></strong> </a>
+
+    </div>
+
+
+{% endblock %}

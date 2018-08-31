@@ -2,9 +2,14 @@
 {% extends 'datepick/base.html' %}
 
 {% block content %}
+    <div class="apply">
+    <a href="{% url 'post_new_half' %}" class="save btn btn-primary">하루 신청</a>
+    <a href="{% url 'post_new_full' %}" class="save btn btn-primary">장기 신청</a>
+     <a href="{% url 'post_special' %}" class="save btn btn-primary">특별 신청</a>
+    </div>
     <div class='form'>
 
-        <h3><span>반차를 신청합니다. 신청할 날짜를 선택해주세요 </span></h3>
+        <h3><span>하루 휴가(반차, 풀타임)를 신청합니다. 신청할 날짜를 선택해주세요 </span></h3>
 
     <script>
     $(function () {

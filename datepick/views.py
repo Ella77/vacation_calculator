@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Promise, Employee
 # # Create your views here.
 # from .models import Promise
-from .forms import  PromiseForm, EmployeeForm, HalfForm, ReplaceForm
+from .forms import  PromiseForm, EmployeeForm, HalfForm, ReplaceForm, SpecialForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .calculate import Calculate,Calculate_year,Calculate_keep
@@ -77,15 +77,23 @@ def main(request):
         p = b-d
         dur = 0
         replace = 0
+        special = 0
 
-        for final in Promise.objects.filter( Q(start__year=timezone.now().year)|Q(end__year =timezone.now().year)& Q(author=request.user)):
-            if  (final.replace_status !=0):
+        queryset = Promise.objects.filter(author=request.user)
+        queryset = queryset.filter(Q(Q(start__year=timezone.now().year) | Q(end__year=timezone.now().year)))
+
+        for final in queryset:
+            if final.status == 4:
+                special += final.bus_day_count
+            if final.replace_day !=0:
                 replace += final.replace_day
-            elif (final.status!=0):
-                    dur += 0.5
-            else:
+            elif final.status==1:
+                    dur += 1
+            elif final.status in [2,3]:
+                dur += 0.5
+            elif (final.status == 0):
                 if final.start.year == final.end.year :
-                 dur += numpy.busday_count(final.start, final.end+timedelta(1))
+                 dur += final.bus_day_count
                 else :
                   if final.start.year == timezone.now().year :
                     end_of_year = date(final.start.year,12,31)
@@ -93,21 +101,22 @@ def main(request):
                   else :
                     start_of_year = date(final.end.year,1,1)
                     dur += numpy.busday_count(start_of_year,final.end+timedelta(1))
-        used = d-dur+replace
+        used = d-dur
 
         return render(request, 'datepick/main.html', {'latest':latest, 'used': used, 'p':p, 'dur':dur, 'keep':keep,
-                                                      'replace':replace,})
+                                                      'replace':replace, 'special':special,})
 
 
 def list(request):
-        forms = Promise.objects.filter(Q(author=request.user)| Q(start__year =timezone.now().year) | Q(end__year=timezone.now().year)).order_by('start')
+        forms = Promise.objects.filter(Q(author=request.user) & Q(start__year =timezone.now().year) & Q(end__year=timezone.now().year)).order_by('start')
         return render (request, 'datepick/list.html', {'forms': forms}, )
 
 def list_admin(request):
     if request.user.is_superuser:
+        members = Employee.objects.all()
         forms = Promise.objects.filter(Q(start__year=timezone.now().year) | Q(end__year=timezone.now().year)).order_by(
             'start')
-        return render(request, 'datepick/list_admin.html', {'forms': forms}, )
+        return render(request, 'datepick/list_admin.html', {'forms': forms}, {'members':members},)
 
 @login_required
 def post_edit(request,pk):
@@ -180,7 +189,7 @@ def replace_new(request):
             return redirect('list')
 
 
-    return render(request,'datepick/replace_new.html',{'form': form},)
+    return render(request, 'datepick/post_replace.html', {'form': form}, )
 
 
 def base(request):
@@ -209,3 +218,27 @@ def post_new_year_full(request):
 def confirm(request):
 
     return render(request,'datepick/confirm.html')
+
+
+def post_special(request):
+    return render(request, 'datepick/post_special.html', )
+
+
+def post_special_new(request):
+        # instead of hardcoding a list you could make a query of a model, as long as
+        # it has a __str__() method you should be able to display it.
+
+        if request.method == "POST":
+            form = SpecialForm(request.POST)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                Promise.calc_bus_day(post)
+                post.status = 4
+                post.save()
+
+                return redirect('list')
+        else:
+            form = SpecialForm()
+
+        return render(request, 'datepick/post_special_new.html', {'form': form}, )

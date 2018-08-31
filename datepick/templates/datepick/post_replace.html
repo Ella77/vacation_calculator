@@ -1,10 +1,12 @@
 <meta charset="UTF-8">
 {% extends 'datepick/main.html' %}
 {% block content %}
-    <div class='form'>
+    <div class='apply'>
 
-    <h1>날짜만 입력!    {{ form.count }}일 사용했어요</h1>
-        <p> 올해 {{ d }}일 사용할 수 있어요 </p>
+    <h3> 대체근무를 하면 휴가를 얻을 수 있어요. 0.5단위 입력가능!
+        <p>근무기간과 휴가인정날짜 입력!</p>
+     </h3>
+
     <script>
     $(function () {
         $('.datetime-input').datetimepicker({
@@ -15,20 +17,17 @@
 </script>
 
     </div>
-    <form action=""method="POST" class="promise-form">{% csrf_token %}
+    <form action=""method="POST" class="replace-form">{% csrf_token %}
         <table border="1">
-        {{ form.as_table }}
+        {{ form.as_table}}
         </table>
 
-
-        <script type='text/javascript'>
-
-
+ <script type='text/javascript'>
 
 function foo() {
 
 
-    var user_choice = window.confirm('0.5일 반차 신청하시겠습니까?');
+    var user_choice = window.confirm('대체 휴가 입력하시겠습니까?');
 
 
 if(user_choice==true) {
