@@ -7,7 +7,7 @@ from django.utils import timezone
 
 
 
-def Calculate(d0):
+def Calculate_Total_Vacation_Until_This_Year(d0):
     #
     # d0 = datetime(2018, 8, 1)
     # 올해말 기준 퇴사일 : 2018.12.1일기준
@@ -75,7 +75,7 @@ def Calculate(d0):
             i -= 1
     return (sum)
 
-def Calculate_year(d0):
+def Calculate_This_Year_Vacation(d0):
     d1 = date(2018, 12, 31)
     if (d0.month == 1) & (d0.day == 1):
         a5 = 1
@@ -116,6 +116,6 @@ def Calculate_year(d0):
 
 
 
-def Calculate_keep(d0):
+def Calculate_Passed_Days(d0):
     d1 = date(timezone.now().year,timezone.now().month,timezone.now().day)
     return (d1-d0).days

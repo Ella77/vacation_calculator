@@ -1,35 +1,44 @@
 from django.db import models
 from django.utils import timezone
 from django.core.exceptions import ValidationError
-from .calculate import Calculate,Calculate_year,Calculate_keep
+from .calculate import Calculate_Total_Vacation_Until_This_Year,Calculate_This_Year_Vacation,Calculate_Passed_Days
 from django.contrib.auth.models import User
 from datetime import date, timedelta
 import numpy
 from django.db.models import Q
+from django.urls import reverse
 
 STATUS_CHOICES = (
-    (1, "풀타임"),
+    (0, "일반"),
+    (1, "하루 풀타임"),
     (2, "오전 반차"),
     (3, "오후 반차"),
+    (4, "특별 휴가" ),
+    (5, "대체 근무"),
 
 )
 
 SELECT_REASON = (
     ('매직데이', "매직데이"),
+    ('경사',"경사"),
+    ('조사', "조사"),
 
 )
 
 
-class Promise(models.Model):
-    start = modaddadels.DateField(blank = False)
+class Vacation(models.Model):
+    start = models.DateField(blank = False)
     end = models.DateField(default=start)
-    bus_day_count = models.IntegerField(default=0)
+    bus_day_count = models.FloatField(default=0)
     created_time = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS_CHOICES, default=0)
-    replace_day =models.FloatField(default =0.0)
     reason = models.CharField(choices= SELECT_REASON, max_length=100)
+    regi_status = models.BooleanField(default = True)
 
+    def approve(self):
+        self.regi_status = not self.regi_status
+        self.save()
 
     def calc_bus_day(self):
 
@@ -55,11 +64,9 @@ class Promise(models.Model):
             overlap = True
         return overlap
 
-
-
     def clean(self):
-        if self.status != 0 :
-            events = Promise.objects.filter(status=1 or 2 or 3)
+        if self.status in [1, 2, 3]:
+            events = Vacation.objects.filter(author = self.author_id).exclude(pk = self.pk).filter(status =1 or 2 or 3)
             if events.exists():
                 for event in events:
                     if self.check_overlap_half(event.start,event.status,self.start,self.status):
@@ -73,22 +80,19 @@ class Promise(models.Model):
                             raise ValidationError(
                                 str(event.start) + '-' + str(event.end) + '특별 휴가로 이미 신청한 날짜에요')
         else :
-
             if self.end < self.start:
                 raise ValidationError('시작일 이후 날짜를 설정해주세요')
 
-            events = Promise.objects.filter(status=0)
+            events = Vacation.objects.filter(author=self.author_id).exclude(pk = self.pk).filter(status =0 or 4 or 5)
             if events.exists():
                 for event in events:
                     if self.check_overlap(event.start, event.end, self.start, self.end):
-                        if event.replace_day ==0 :
-
-
+                        if event.status ==0 :
                             raise ValidationError(
                                  str(event.start) + '-' + str(event.end)+ '일반 휴가로 이미 신청한 날짜에요')
                         else :
                             raise ValidationError(
-                                 str(event.start) + '-' + str(event.end) + '대체 휴가로 이미 신청한 날짜에요')
+                                 str(event.start) + '-' + str(event.end) + '대체 및 특별 휴가로 이미 신청한 날짜에요')
 
 
 class VacationHistory(models.Model):
@@ -103,12 +107,22 @@ class Employee(models.Model):
     users = models.OneToOneField(User, related_name='employee', on_delete=models.CASCADE)
     jobstart = models.DateField()
 
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular blog-author instance.
+        """
+        return reverse('vacation-by-author', args=[str(self.id)])
 
+    def __str__(self):
+        """
+        String for representing the Model object.
+        """
+        return self.users.username
     def get_current_vacation(self):
-        return round(Calculate_year(self.jobstart), 1)
+        return round(Calculate_This_Year_Vacation(self.jobstart), 1)
 
     def get_keep(self):
-        return round(Calculate_keep(self.jobstart), 1)
+        return round(Calculate_Passed_Days(self.jobstart), 1)
 
 
 

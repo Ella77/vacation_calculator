@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<meta charset="UTF-8">
+{% extends 'datepick/base.html' %}
+
+
+
+{% block content %}
+
+{% for author in employee_list %}
+    <li>
+    <a href = "{% url 'vacation-by-author' pk=author.id %}">{{ author }}</a></li>
+{% endfor %}
+
+
+{% endblock %}

@@ -49,19 +49,19 @@
 
         <ul class="nav-list">
              {% if user.is_superuser %}
-                <li class='nav-item'><a href="/list_admin/" class="nav-link">관리자 전용 페이지<strong
+                <li class='nav-item'><a href="{% url 'list_admin'%}" class="nav-link">관리자 전용 페이지<strong
                         class="glyphicon glyphicon-calendar"></strong></a></li>
               {% endif %}
-             <li class = 'nav-item'><a href="/main/" class="nav-link"> 통계 확인<strong
+             <li class = 'nav-item'><a href="{% url 'main' %}" class="nav-link"> 통계 확인<strong
                    class="glyphicon glyphicon-cog"></strong></a></li>
 
- <li class = 'nav-item'><a href="/post/new/" class="nav-link">휴가 신청<strong
+ <li class = 'nav-item'><a href="{% url 'post_new' %}" class="nav-link">휴가 신청<strong
                     class="glyphicon glyphicon-cog"></strong></a></li>
 
 
-            <li class = 'nav-item'><a href="/list/" class="nav-link">신청 확인/수정<strong
+            <li class = 'nav-item'><a href="{% url 'list' %}" class="nav-link">신청 확인/수정<strong
                     class="glyphicon glyphicon-pencil"></strong></a></li>
-             <li class = 'nav-item'><a href="/help" class="nav-link">휴가 산정법<strong
+             <li class = 'nav-item'><a href="{% url 'help' %}" class="nav-link">휴가 산정법<strong
                     class="glyphicon glyphicon-question-sign"></strong></a></li>
 
 

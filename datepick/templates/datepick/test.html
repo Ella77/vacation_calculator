@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<meta charset="UTF-8">
+{% extends 'datepick/base.html' %}
+
+   <div class="apply">
+   <a href="confirm.html" class="save btn-btn primary">메일 보내기</a>
+   <a href="confirm.html" class="save btn-btn primary">캘린더로 보</a>
+       <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=ellie@mycoon.com,jun@mykoon.com&tf=1" class="save btn btn-primary">메일 보내기</a>
+{% block content %}
+   </div>
+
+
+       <h3>일반 휴가 내역</h3>
+
+         <div class ="table">
+
+<table>
+          <tr>
+         <th>종류</th>
+          <th>휴가일수</th>
+          <th>휴가일</th>
+              <th>신청일</th>
+          <th>수정</th>
+          <th>삭제 </th>
+          <th>승인 상황</th></tr >
+   {% for post in forms.reverse%}
+         <tr><td>{{ post.status }}</td>
+
+        <td>{{ post.bus_day_count }}</td>
+          <td>{{ post.start }} ~ {{ post.end }} </td>
+
+
+            <td>{{ post.created_time.year }}.{{ post.created_time.month }}.{{ post.created_time.day|linebreaksbr }} </td>
+
+<td> <a class="btn btn-default" href="{% url 'post_edit_entry' pk=post.pk %}"><span
+         class="glyphicon glyphicon-pencil"></span></a></td>
+    <td>   <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+    </td>
+
+             {% if post.regi_status %}
+             <td>승인 완료</td>
+            {% else %}
+         <td>승인 대기중 </td>
+         {% endif %}
+         </tr> {% endfor %} </table> </div>
+    {% endblock %}

@@ -2,37 +2,32 @@
 {% extends 'datepick/base.html' %}
 
 {% block content %}
-   <div class="apply">
-   <a href="{% url 'confirm' %}" class="save btn-btn primary">메일 보내기</a>
-   <a href="{% url 'confirm' %}" class="save btn-btn primary">캘린더로 보</a>
-   </div>
-{% for a in members %}
- <p> {{ a.username}}</p> <br>
 
-   {% endfor %}
+ <h1>{{ name }}의 내역입니다</h1>
 
-
-       <h3>일반 휴가 내역</h3>
+    {% if forms.count == 0  %}
+    <p>휴가 신청 내역이 없어요</p>
+{% else %}
+     <h3>일반 휴가 내역</h3>
 
          <div class ="table">
 
 <table>
           <tr>
-          <th>
-              신청자
-          </th>
+
           <th>휴가일수</th>
-          <th>휴가일</th>
+          <th class="duration">휴가일 </th>
               <th>신청일</th>
           <th>수정</th>
           <th>삭제 </th></tr>
 
-   {% for post in forms.reverse%}
+      {% for post in forms %}
+
          <tr>
 
     {% if post.status != 4 and post.status != 5 %}
 
-             <td>{{  post.author}}</td>
+
 
 
         {% if post.status == 1 %}
@@ -49,7 +44,7 @@
              <td>{{ post.bus_day_count }}</td>
 
 
-          <td>{{ post.start }} ~ {{ post.end }} </td>
+          <td class="duration">{{ post.start }} ~ {{ post.end }} </td>
 {% endif %}
 
             <td>{{ post.created_time.year }}.{{ post.created_time.month }}.{{ post.created_time.day|linebreaksbr }} </td>
@@ -72,25 +67,23 @@
 
 <table>
           <tr>
-          <th>
-              신청자
-          </th>
+
               <th>근무일수</th>
-          <th>근무날</th>
+          <th class="duration">근무날</th>
               <th>신청일</th>
           <th>수정</th>
           <th>삭제 </th>
               <th>승인상태</th>
           </tr>
-  {% for post in forms.reverse%}
+      {% for post in forms %}
          <tr>
 
  {% if post.status == 5  %}
-             <td>{{  post.author}}</td>
+
 
               <td>{{ post.bus_day_count }}</td>
 
-          <td>{{ post.start }} ~{{ post.end }} </td>
+          <td class="duration">{{ post.start }} ~{{ post.end }} </td>
 
             <td>{{ post.created_time.year }}.{{ post.created_time.month }}.{{ post.created_time.day|linebreaksbr }} </td>
 
@@ -100,9 +93,9 @@
  </td>
 
 {% if post.regi_status == 0 %}
-        <td>  미완료 <a class="btn btn-default" href="{% url 'approve' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a> </td>
+        <td> <a class="btn btn-default" href="{% url 'approve' pk=post.pk %}"><span> 승인하기</span></a> </td>
 {% else %}
-    <td> 승인완료 <a class="btn btn-default" href="{% url 'approve' pk=post.pk %}"><span class="glyphicon glyphicon-ok"></span></a></td>
+    <td>  <a class="btn btn-default" href="{% url 'approve' pk=post.pk %}"><span> 취소하기</span></a> </td>
     {% endif %}
          {% endif %}
          </tr> {% endfor %}</table></div>
@@ -113,28 +106,25 @@
 
 <table>
           <tr>
-          <th>
-              신청자
-          </th>
+
           <th>신청사유</th>
               <th>휴가일수</th>
-          <th>근무날</th>
+          <th class="duration">근무날</th>
               <th>신청일</th>
           <th>수정</th>
           <th>삭제 </th>
-              <th>승인 상</th>
+              <th>승인 상태</th>
           </tr>
-  {% for post in forms.reverse%}
+     {% for post in forms %}
          <tr>
 
       <tr>
       {%  if post.status == 4 %}
-       <td>{{  post.author}}</td>
 
               <td>{{ post.reason }}</td>
           <td>{{ post.bus_day_count }}</td>
 
-          <td>{{ post.start }} ~{{ post.end }} </td>
+          <td class="duration">{{ post.start }} ~{{ post.end }} </td>
 
             <td>{{ post.created_time.year }}.{{ post.created_time.month }}.{{ post.created_time.day|linebreaksbr }} </td>
 
@@ -145,9 +135,9 @@
 
 
 {% if post.regi_status == 0 %}
-        <td>  미완료 <a class="btn btn-default" href="{% url 'approve' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a> </td>
+        <td>   <a class="btn btn-default" href="{% url 'approve' pk=post.pk %}"><span> 승인하기</span></a> </td>
 {% else %}
-    <td> 승인완료 <a class="btn btn-default" href="{% url 'approve' pk=post.pk %}"><span class="glyphicon glyphicon-ok"></span></a></td>
+    <td> <a class="btn btn-default" href="{% url 'approve' pk=post.pk %}"><span> 취소하기</span></a> </td>
     {% endif %}
 
 
@@ -160,6 +150,6 @@
 
     </div>
 
-
+{% endif %}
 
 {% endblock %}

@@ -1,12 +1,12 @@
 <meta charset="UTF-8">
 {% extends 'datepick/main.html' %}
 {% block content %}
-    <div class='apply'>
+    <div class='form'>
 
-    <h3> 대체근무를 하면 휴가를 얻을 수 있어요. 0.5단위 입력가능!
+        <h3> 대체근무를 하면 휴가를 얻을 수 있어요. 0.5단위 입력가능! </h3>
         <p>근무기간과 휴가인정날짜 입력!</p>
-     </h3>
 
+    </div>
     <script>
     $(function () {
         $('.datetime-input').datetimepicker({
@@ -16,7 +16,7 @@
     });
 </script>
 
-    </div>
+
     <form action=""method="POST" class="replace-form">{% csrf_token %}
         <table border="1">
         {{ form.as_table}}

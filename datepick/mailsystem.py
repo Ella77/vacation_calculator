@@ -74,10 +74,10 @@ def test():
     password = 'sjbang246'
     es = Email(mail_server, port, email_from, password)
     to = ['ksj9977@naver.com', 'ella@mykoon.com']
-    for i in range(3):
-        subject = '[%02d] OMG Super Important 테스트 메시지' % i
-        body = "[%02d] Hey, what's up?\n\n- 브로" % i
-        html = """
+
+    subject = '[%02d] OMG Super Important 테스트 메시지'
+    body = "[%02d] Hey, what's up?\n\n- 브로"
+    html = """
         <html>
           <head></head>
           <body>
@@ -88,9 +88,9 @@ def test():
           </body>
         </html>
         """
-        attachments = ['shabu-stars.png']
-        es.send(to, subject, body, html, attachments)
-        time.sleep(2)
+    attachments = ['shabu-stars.png']
+    es.send(to, subject, body, html, attachments)
+    time.sleep(2)
 ################################################################################
 if __name__ == '__main__':
     test()

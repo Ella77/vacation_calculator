@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from datepick.views import *
+
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
 from .feedback import MailToAdmin
@@ -30,21 +32,24 @@ urlpatterns = [
     url(r'^post/new/special$',post_special,name = 'post_special'),
     url(r'^post/new/special_new$',post_special_new,name='post_special_new'),
     url(r'^post/new/$',post_new, name= 'post_new'),
+    url(r'^post/(?P<pk>\d+)/edit/$', edit, name='post_edit_entry'),
+    url(r'^post/(?P<pk>\d+)/approve/$', approve, name='approve'),
     url(r'^main/$', main, name='main'),
-    url(r'^list_admin/$', list_admin,name='list_admin'),
+    url(r'^list_admin/', list_admin,name='list_admin'),
     url(r'^list/$', list,name='list'),
     url(r'^accounts/login/$', auth_views.LoginView.as_view(),name='login'),
     url(r'^accounts/logout/$', auth_views.LogoutView.as_view(),name='logout'),
-    url(r'^post/(?P<pk>\d+)/edit/$', post_edit, name='post_edit'),
+    url(r'^post/(?P<pk>\d+)/editsample/$', post_edit, name='post_edit'),
     url(r'^post/(?P<pk>\d+)/remove/$',post_remove,name= 'post_remove'),
     url(r'^help/$', help, name='help'),
     url(r'^setting/$', setting,name='setting'),
     url(r'^list/admin/$',list,name='list'),
     url(r'^django_popup_view_field/',include('django_popup_view_field.urls')
         ),
-
+    url(r'^list_user/(?P<pk>\d+)/$',list_user,name='list_user'),
     url(r'^ContactToAdmin$', MailToAdmin),
     url(r'^$',confirm,name='confirm'),
-
+    url(r'^vacation/<int:pk>', VacationListbyAuthor.as_view(), name='vacation-by-author'),
+    url(r'^vacations/', VacationerListView.as_view(), name= 'bloggers'),
 
 ]

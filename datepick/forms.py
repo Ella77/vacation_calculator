@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from django.urls import reverse
 from django.core.exceptions import ValidationError
 from django.utils.timezone import timedelta
-from .models import Promise, Employee
+from .models import Vacation, Employee
 from django.forms.widgets import SelectDateWidget
 from django.contrib.admin.widgets import AdminDateWidget
 from django.utils import timezone
@@ -12,10 +12,21 @@ from django_popup_view_field.fields import PopupViewField
 from . popups import PopupView
 import numpy
 
-
 STATUS_CHOICES = (
-    (1, "오전 반차"),
-    (2, "오후 반차"),
+    (0, "일반"),
+    (1, "하루 풀타임"),
+    (2, "오전 반차"),
+    (3, "오후 반차"),
+    (4, "특별 휴가" ),
+    (5, "대체 근무"),
+
+)
+
+STAT_CHOICES = (
+    (1, "풀타임"),
+    (2, "오전 반차"),
+    (3, "오후 반차"),
+
 )
 
 CHOICES = (
@@ -26,10 +37,10 @@ CHOICES = (
 SELECT_REASON = (
     (1, "매직데이"),
 )
-class PromiseForm(forms.ModelForm):
+class VacationForm(forms.ModelForm):
 
     class Meta:
-        model = Promise
+        model = Vacation
         fields = ('start', 'end')
         labels ={
             'start': '휴가 시작일',
@@ -62,8 +73,9 @@ class EmployeeForm(forms.ModelForm):
 class HalfForm(forms.ModelForm):
 
     class Meta:
-        model = Promise
+        model = Vacation
         fields = ('start', 'status')
+
 
         labels = {
             'start': '휴가 일자',
@@ -73,8 +85,17 @@ class HalfForm(forms.ModelForm):
             'start': forms.DateInput(attrs={'class': 'datetime-input',
                                             'style': 'border-color: blue;',
                                             'placeholder': '해당 날짜'}),
-            'status': forms.Select(choices=STATUS_CHOICES),
+            'status': forms.Select(choices=STAT_CHOICES),
         }
+
+    def __init__(self, *args, **kwargs):
+        is_staff = kwargs.pop('is_staff', None)
+        super(HalfForm, self).__init__(*args, **kwargs)
+        if is_staff:
+            self.fields['status'].choices = STATUS_CHOICES
+        else:
+            self.fields['status'].choices = STAT_CHOICES
+
 
 class ConfirmForm(forms.Form):
     color = PopupViewField(
@@ -86,12 +107,12 @@ class ConfirmForm(forms.Form):
 
 class ReplaceForm(forms.ModelForm):
     class Meta :
-        model = Promise
-        fields = ('start', 'end', 'replace_day')
+        model = Vacation
+        fields = ('start', 'end', 'bus_day_count')
         labels= {
             'start': '대체근무 시작',
             'end': '대체근무 종료',
-            'replace_day': '휴가로 얻을 날짜',
+            'bus_day_count': '휴가로 얻을 날짜',
             'replace_status': '휴가 종류',
         }
         widgets = {
@@ -101,7 +122,7 @@ class ReplaceForm(forms.ModelForm):
             'end': forms.DateInput(attrs={'class': 'datetime-input',
                                           'style': 'border-color: red;',
                                           'placeholder': '대체근무했던 끝나는 날'}),
-           'replace_day' : forms.NumberInput(attrs={'placeholder':'휴가로 얻을 일'}),
+           'bus_day_count' : forms.NumberInput(attrs={'placeholder':'휴가로 얻을 일'}),
         }
 
 # class TextForm(forms.Form):
@@ -118,7 +139,7 @@ class ReplaceForm(forms.ModelForm):
 
 class SpecialForm(forms.ModelForm):
     class Meta:
-        model = Promise
+        model = Vacation
         fields = ('start','end','reason',)
         labels = {
             'start': '휴가 시작일',
