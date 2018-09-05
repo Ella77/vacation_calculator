@@ -31,6 +31,7 @@ class Vacation(models.Model):
     end = models.DateField(default=start)
     bus_day_count = models.FloatField(default=0)
     created_time = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now= True)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS_CHOICES, default=0)
     reason = models.CharField(choices= SELECT_REASON, max_length=100)
@@ -103,6 +104,7 @@ class VacationHistory(models.Model):
     special_day = models.FloatField(default=0.0)
     replace_workday = models.FloatField(default=0.0)
     workingdays_with = models.IntegerField(default =0)
+
 
     def get_data(self):
 

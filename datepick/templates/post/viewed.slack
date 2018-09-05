@@ -1,0 +1,6 @@
+{% extends django_slack %}
+
+{% block text %}
+{{ user.get_full_name }} just approved {{ post.start }}~({{ post.end|urlize }}).
+{% endblock %}
+

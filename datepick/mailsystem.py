@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 import os
 import smtplib
 import time
@@ -6,6 +7,8 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email.utils import COMMASPACE, formatdate
 from email import encoders
+
+from .models import Vacation
 ################################################################################
 class Email(object):
     # ==========================================================================
@@ -74,9 +77,10 @@ def test():
     password = 'sjbang246'
     es = Email(mail_server, port, email_from, password)
     to = ['ksj9977@naver.com', 'ella@mykoon.com']
+    new_vacation = Vacation.objects.filter(author_id = 1).order_by('-updated_at').first()
 
     subject = '[%02d] OMG Super Important 테스트 메시지'
-    body = "[%02d] Hey, what's up?\n\n- 브로"
+    body = "[%02d] Hey, what's up?\n\n- 브로, new_vacation"
     html = """
         <html>
           <head></head>
@@ -84,6 +88,8 @@ def test():
             <p>here is some html<br>
                Here is some 링크 <a href="https://www.python.org">link</a>.
                <p>오늘 몇월 몇일 휴가 신청했어요~</p>
+               <p>{{new_vacation}}</p>
+               <p>{{new_vacation.start}}</p>
             </p>
           </body>
         </html>

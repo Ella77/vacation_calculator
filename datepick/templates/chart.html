@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+{% extends 'datepick/base.html' %}
 
-  <title>django-pygal</title>
-</head>
-<body>
 
-{{ vacation|safe }}
-</body>
-</html>
+{% load chartit %}
+
+
+{% block content %}
+    {% block title %}
+Users chart
+{% endblock %}
+{% block javascript %}
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+    {% endblock %}
+    <div class="chart">
+        <div class="row">
+            <div id="vacationchart">{{ vacationchart|load_charts:"vacationchart" }}</div>
+        </div>
+    </div>
+{% endblock %}

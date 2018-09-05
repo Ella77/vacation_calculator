@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404,render_to_response
 from .models import Vacation, Employee, VacationHistory
 # # Create your views here.
 # from .models import
@@ -23,10 +23,11 @@ from datetime import timedelta
 from django.views.generic.edit import UpdateView
 from .mailsystem import *
 from django.views import generic
-
+from chartit import DataPool,Chart
+from django_slack import slack_message
 
 class IndexView(TemplateView):
-    template_name = 'chart.html'
+    template_name = 'datepick/base.html'
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
@@ -42,7 +43,54 @@ class IndexView(TemplateView):
         return context
 
 def chart(request):
-    return render(request, 'chart.html')
+    data = \
+        DataPool(
+            series =
+            [{ 'options': {
+                'source': VacationHistory.objects.all()},
+
+                'terms':[
+                    'user',
+                    {'총 연차': 'total'},
+                    {'올해 남은 연차': 'thisyear_left'},
+                    {'올해 사용량': 'thisyear_used'},
+                    {'올해 대체휴가': 'replace_workday'},
+                    {'올해 특별휴가': 'special_day'},
+
+                ]}])
+    cht = Chart(
+        datasource = data,
+        series_options =
+        [{'options':{
+            'type':'column',
+            'stacking':False},
+
+            'terms':{
+                'user':[
+
+                    '총 연차',
+                    '올해 남은 연차',
+                    '올해 사용량',
+                    '올해 대체휴가',
+                    '올해 특별휴가',
+                ]
+        }}],
+        chart_options =
+        {'title': {
+            'text': '사용자별 휴가와 사용현황'
+        },
+
+            'xAxis': {
+                'title': {
+                    'text': '사용자',
+                }},
+            'yAxis': {
+                'title': {
+                    'text': 'vacation',
+                }
+            }})
+
+    return render(request,'chart.html',{'vacationchart':cht})
 
 class VacationListbyAuthor(generic.ListView):
 
@@ -125,6 +173,10 @@ def approve(request,pk):
     post.approve()
     vacationhistory, created = VacationHistory.objects.update_or_create(user=request.user)
     VacationHistory.get_data(vacationhistory)
+    slack_message('post/viewed.slack',{
+        'post':post,
+        'user':request.user,
+    })
     return redirect('list_admin')
 
 # def base(request):
@@ -179,6 +231,53 @@ def post_new_half(request):
 
 @login_required
 def main(request):
+    test()
+
+    data = \
+        DataPool(
+            series=
+            [{'options': {
+                'source': VacationHistory.objects.filter(user=request.user)},
+                'terms': [
+                    'user',
+                    {'총 연차':'total'},
+                    {'올해 남은 연차':'thisyear_left'},
+                    {'올해 사용량':'thisyear_used'},
+                    {'올해 대체휴가':'replace_workday'},
+                        {'올해 특별휴가':'special_day'},
+                ]}
+            ])
+    cht = Chart(
+        datasource=data,
+        series_options=
+        [{'options': {
+            'type': 'bar',
+            'stacking': False},
+
+            'terms': {
+                'user': [
+
+                    '총 연차',
+                    '올해 남은 연차',
+                    '올해 사용량',
+                    '올해 대체휴가',
+                    '올해 특별휴가',
+                ]
+            }}],
+        chart_options=
+        {'title': {
+            'text': '사용자별 휴가와 사용현황'
+        },
+
+            'xAxis': {
+                'title': {
+                    'text': '사용자',
+                }},
+            'yAxis':{
+                'title':{
+                    'text':'vacation',
+                }
+            } })
 
 
 
@@ -221,7 +320,7 @@ def main(request):
         thisyear_left = thisyear_available-thisyear_used+replace_workday
         # VacationHistory.save(post)
         # vacation_history = VacationHistory(user=request.user, thisyear_left)
-        return render(request, 'datepick/main.html', {'latestjobstart':latestjobstart, 'thisyear_origin_left':thisyear_origin_left, 'lastyear_available':lastyear_available, 'thisyear_used':thisyear_used, 'workingdays_with':workingdays_with,
+        return render(request, 'datepick/main.html', {'vacation':cht, 'latestjobstart':latestjobstart, 'thisyear_origin_left':thisyear_origin_left, 'lastyear_available':lastyear_available, 'thisyear_used':thisyear_used, 'workingdays_with':workingdays_with,
                                                       'replace_workday':replace_workday, 'special_day':special_day, 'thisyear_left':thisyear_left, })
 
 
@@ -250,7 +349,54 @@ def list_user(request, pk):
     name = User.objects.get(id=pk)
     forms = Vacation.objects.filter(Q(author_id =pk) & Q(Q(start__year=timezone.now().year) | Q(end__year=timezone.now().year))).order_by(
             '-start')
-    return render(request, 'datepick/list_user.html', {'forms': forms, 'name':name})
+    source = VacationHistory.objects.filter(user_id=pk)
+    data = \
+        DataPool(
+            series=
+            [{'options': {
+                'source': source}
+                ,
+                'terms': [
+                    'user',
+                    {'총 연차': 'total'},
+                    {'올해 남은 연차': 'thisyear_left'},
+                    {'올해 사용량': 'thisyear_used'},
+                    {'올해 대체휴가': 'replace_workday'},
+                    {'올해 특별휴가': 'special_day'},
+                ]}
+            ])
+    cht = Chart(
+        datasource=data,
+        series_options=
+        [{'options': {
+            'type': 'bar',
+            'stacking': False},
+
+            'terms': {
+                'user': [
+                    '총 연차',
+                    '올해 남은 연차',
+                    '올해 사용량',
+                    '올해 대체휴가',
+                    '올해 특별휴가',
+                ]
+            }}],
+        chart_options=
+        {'title': {
+            'text': '사용자별 휴가와 사용현황'
+        },
+
+            'xAxis': {
+                'title': {
+                    'text': 'user',
+                }},
+            'yAxis': {
+                'title': {
+                    'text': 'vacation',
+                }
+            }})
+
+    return render(request, 'datepick/list_user.html', {'vacationchart':cht,'forms': forms, 'name':name})
 
 
 @login_required
