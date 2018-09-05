@@ -17,6 +17,10 @@ url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
     border-right:10px solid orange;
     font-family : 'Hanna',fantasy;
 }
+#chart {
+    width :1000px;
+    height:600px;
+}
 
 .li {
     margin-bottom : 30px;

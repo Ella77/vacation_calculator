@@ -2,10 +2,11 @@ import datetime
 from datetime import date, timedelta
 import math
 from django.utils import timezone
-
+# from .models import  Vacation,VacationHistory
 # 입사일 : 입력!
+import numpy
 
-
+from django.db.models import Q
 
 def Calculate_Total_Vacation_Until_This_Year(d0):
     #
@@ -119,3 +120,31 @@ def Calculate_This_Year_Vacation(d0):
 def Calculate_Passed_Days(d0):
     d1 = date(timezone.now().year,timezone.now().month,timezone.now().day)
     return (d1-d0).days
+
+
+# def get_data(author):
+#         latestjobstart = Employee.objects.last()
+#         thisyear_available = latestjobstart.get_current_vacation()
+#         queryset = Vacation.objects.filter(author=author)
+#         queryset = queryset.filter(Q(Q(start__year=timezone.now().year) | Q(end__year=timezone.now().year)))
+#         queryset = queryset.filter(regi_status=True)
+#         for final in queryset:
+#             if final.status == 4:
+#                 VacationHistory.special_day += final.bus_day_count
+#             elif final.status == 5:
+#                 VacationHistory.replace_workday += final.bus_day_count
+#             elif (final.status == 0):
+#                 if final.start.year == final.end.year:
+#                     VacationHistory.thisyear_used += final.bus_day_count
+#                 else:
+#                     if final.start.year == timezone.now().year:
+#                         end_of_year = date(final.start.year, 12, 31)
+#                         VacationHistory.thisyear_used += numpy.busday_count(final.start, end_of_year + timedelta(1))
+#                     else:
+#                         start_of_year = date(final.end.year, 1, 1)
+#                         VacationHistory.thisyear_used += numpy.busday_count(start_of_year, final.end + timedelta(1))
+#             else:
+#                 VacationHistory.thisyear_used += final.bus_day_count
+#         VacationHistory.thisyear_left = thisyear_available - VacationHistory.thisyear_used + VacationHistory.replace_workday
+#         VacationHistory.user = author
+#         VacationHistory.save()

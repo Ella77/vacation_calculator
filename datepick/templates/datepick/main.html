@@ -1,6 +1,7 @@
 
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 {% extends 'datepick/base.html' %}
 {%  load static %}
@@ -16,19 +17,23 @@
 <dl class="statistics">
 
     <dt>당신의 입사일</dt>
-        <dd> {{  latest.jobstart }}</dd>
+        <dd> {{  latestjobstart.jobstart }}</dd>
 
         <dt>당신이 작년까지 썼던 연차</dt>
-        <dd>{{ p }}일</dd>
+        <dd>{{ lastyear_available}}일</dd>
            <dt>당신의 올해 남은 연차</dt>
-     <dd>  기본{{ origin_left }}+{{ replace }} ={{  left }}일</dd>
+     <dd>  기본{{ thisyear_origin_left }}+{{ replace_workday }} ={{ thisyear_left }}일</dd>
         <h3>당신의 휴가 사용량</h3>
-    <p> 당신은 올해 {{ dur }}일 썼어요</p>
-    <p> 대체 휴가로 얻은 {{ replace }}일도 있어요.</p>
-    <p> 연차 외 특별휴가로 쓴 {{ special }}일도 있네요</p>
+    <p> 당신은 올해 {{ thisyear_used }}일 썼어요</p>
+    <p> 대체 휴가로 얻은 {{ replace_workday }}일도 있어요.</p>
+    <p> 연차 외 특별휴가로 쓴 {{ special_day }}일도 있네요</p>
 
-<h3>{{ user.username }}이 스푼과 함께한 {{ keep }} 날은 어떠셨나요?</h3>
+<h3>{{ user.username }}이 스푼과 함께한 {{ workingdays_with }} 날은 어떠셨나요?</h3>
 </dl>
+    <body>
+ {{ vacations|safe }}
+    </body>
+  <script type="text/javascript" src="http://kozea.github.com/pygal.js/latest/pygal-tooltips.min.js"></script>
 
 
 {% endblock %}

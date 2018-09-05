@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Vacation, Employee
+from .models import Vacation, Employee, VacationHistory
 # # Create your views here.
-# from .models import Promise
+# from .models import
 from .forms import  VacationForm, EmployeeForm, HalfForm, ReplaceForm, SpecialForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
@@ -10,7 +10,9 @@ from .calculate import Calculate_Total_Vacation_Until_This_Year,Calculate_This_Y
 import datetime
 import numpy
 from django.urls import reverse
-from django.views.generic import FormView
+from django.views.generic import FormView, TemplateView
+from pygal.style import DarkStyle
+from .charts import VacationChart
 from .forms import ConfirmForm
 from django.http import HttpResponse
 from django.utils import timezone
@@ -21,6 +23,26 @@ from datetime import timedelta
 from django.views.generic.edit import UpdateView
 from .mailsystem import *
 from django.views import generic
+
+
+class IndexView(TemplateView):
+    template_name = 'chart.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+
+
+        vacation = VacationChart(
+        height = 1000,
+        width = 600,
+        style = DarkStyle,
+
+    )
+        context['vacation'] = vacation.generate()
+        return context
+
+def chart(request):
+    return render(request, 'chart.html')
 
 class VacationListbyAuthor(generic.ListView):
 
@@ -86,6 +108,8 @@ class VacationUpdate(UpdateView):
                     self.object.regi_status = False
 
             post.save()
+            vacationhistory, created = VacationHistory.objects.update_or_create(user=self.request.user)
+            VacationHistory.get_data(vacationhistory)
             if self.request.user.is_superuser:
                 return redirect('list_admin')
             else :
@@ -99,6 +123,8 @@ edit = VacationUpdate.as_view()
 def approve(request,pk):
     post = get_object_or_404(Vacation, pk=pk)
     post.approve()
+    vacationhistory, created = VacationHistory.objects.update_or_create(user=request.user)
+    VacationHistory.get_data(vacationhistory)
     return redirect('list_admin')
 
 # def base(request):
@@ -110,14 +136,17 @@ def post_new(request):
 @login_required
 def post_new_full(request):
     if request.method=="POST":
-        form = VacationForm(request.POST)
 
+        form = VacationForm(request.POST)
+        form.instance.author = request.user
         if form.is_valid():
             post = form.save(commit =False)
             post.author = request.user
             Vacation.calc_bus_day(post)
-            post.save()
 
+            post.save()
+            vacationhistory, created = VacationHistory.objects.update_or_create(user=request.user)
+            VacationHistory.get_data(vacationhistory)
             return redirect ('list')
     else :
             form = VacationForm()
@@ -129,6 +158,7 @@ def post_new_full(request):
 def post_new_half(request):
     if request.method == "POST":
         form = HalfForm(request.POST, is_staff=False)
+        form.instance.author = request.user
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -137,8 +167,10 @@ def post_new_half(request):
              post.bus_day_count = 1
             else :
                 post.bus_day_count = 0.5
-            post.save()
 
+            post.save()
+            vacationhistory, created = VacationHistory.objects.update_or_create(user=request.user)
+            VacationHistory.get_data(vacationhistory)
             return redirect('list')
     else:
         form = HalfForm(is_staff=False)
@@ -148,45 +180,49 @@ def post_new_half(request):
 @login_required
 def main(request):
 
+
+
     if Employee.objects.filter(users = request.user).exists() == False:
         return redirect('setting')
 
     else:
 
-        latest = Employee.objects.last()
-        d = latest.get_current_vacation()
-        keep = latest.get_keep()
-        b = round(Calculate_Total_Vacation_Until_This_Year(latest.jobstart), 1)
-        p = b-d
-        dur = 0
-        replace = 0
-        special = 0
+        latestjobstart = Employee.objects.filter(users= request.user).last()
+        thisyear_available = latestjobstart.get_current_vacation()
+        workingdays_with = latestjobstart.get_keep()
+        total_available = round(Calculate_Total_Vacation_Until_This_Year(latestjobstart.jobstart), 1)
+        lastyear_available = total_available-thisyear_available
+        thisyear_used = 0
+        replace_workday = 0
+        special_day = 0
 
         queryset = Vacation.objects.filter(author=request.user)
         queryset = queryset.filter(Q(Q(start__year=timezone.now().year) | Q(end__year=timezone.now().year)))
         queryset = queryset.filter(regi_status=True)
         for final in queryset:
             if final.status == 4:
-                special += final.bus_day_count
+                special_day += final.bus_day_count
             elif final.status == 5 :
-                replace += final.bus_day_count
+                replace_workday += final.bus_day_count
             elif (final.status == 0):
                 if final.start.year == final.end.year :
-                 dur += final.bus_day_count
+                 thisyear_used += final.bus_day_count
                 else :
                   if final.start.year == timezone.now().year :
                     end_of_year = date(final.start.year,12,31)
-                    dur += numpy.busday_count(final.start,end_of_year+timedelta(1))
+                    thisyear_used += numpy.busday_count(final.start,end_of_year+timedelta(1))
                   else :
                     start_of_year = date(final.end.year,1,1)
-                    dur += numpy.busday_count(start_of_year,final.end+timedelta(1))
+                    thisyear_used += numpy.busday_count(start_of_year,final.end+timedelta(1))
             else :
-                dur += final.bus_day_count
-        origin_left = d-dur
-        left = d-dur+replace
+                thisyear_used += final.bus_day_count
+        thisyear_origin_left = thisyear_available-thisyear_used
 
-        return render(request, 'datepick/main.html', {'latest':latest, 'origin_left':origin_left, 'p':p, 'dur':dur, 'keep':keep,
-                                                      'replace':replace, 'special':special,'left':left,})
+        thisyear_left = thisyear_available-thisyear_used+replace_workday
+        # VacationHistory.save(post)
+        # vacation_history = VacationHistory(user=request.user, thisyear_left)
+        return render(request, 'datepick/main.html', {'latestjobstart':latestjobstart, 'thisyear_origin_left':thisyear_origin_left, 'lastyear_available':lastyear_available, 'thisyear_used':thisyear_used, 'workingdays_with':workingdays_with,
+                                                      'replace_workday':replace_workday, 'special_day':special_day, 'thisyear_left':thisyear_left, })
 
 
 def list(request):
@@ -251,7 +287,10 @@ def post_edit(request,pk):
 @login_required
 def post_remove(request,pk):
     post = get_object_or_404(Vacation, pk=pk)
+
     post.delete()
+    vacationhistory, created = VacationHistory.objects.update_or_create(user=request.user)
+    VacationHistory.get_data(vacationhistory)
     if request.user.is_superuser:
         return redirect('list_admin')
     else:
@@ -293,15 +332,21 @@ def replace_new(request):
     form = ReplaceForm()
     if request.method == "POST":
         form = ReplaceForm(request.POST)
-
+        form.instance.author = request.user
         if form.is_valid():
 
 
             post = form.save(commit=False)
             post.author = request.user
             post.status = 5
-            post.regi_status = False
+            if request.user.is_superuser:
+                post.regi_status = True
+            else :
+                post.regi_status = False
+
             post.save()
+            vacationhistory, created = VacationHistory.objects.update_or_create(user=request.user)
+            VacationHistory.get_data(vacationhistory)
             return redirect('list')
 
 
@@ -320,12 +365,15 @@ def post_full(request):
 def post_new_year_full(request):
     if request.method == "POST":
         form = VacationForm(request.POST)
+        form.instance.author = request.user
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
             Vacation.calc_bus_day(post)
-            post.save()
 
+            post.save()
+            vacationhistory, created = VacationHistory.objects.update_or_create(user=request.user)
+            VacationHistory.get_data(vacationhistory)
             return redirect('list')
     else:
         form = VacationForm()
@@ -347,15 +395,22 @@ def post_special_new(request):
 
         if request.method == "POST":
             form = SpecialForm(request.POST)
+            form.instance.author = request.user
             if form.is_valid():
                 post = form.save(commit=False)
                 post.author = request.user
 
                 post.status = 4
-                post.regi_status = False
-                Vacation.calc_bus_day(post)
-                post.save()
+                if request.user.is_superuser:
+                    post.regi_status = True
+                else:
+                    post.regi_status = False
 
+                Vacation.calc_bus_day(post)
+
+                post.save()
+                vacationhistory, created = VacationHistory.objects.update_or_create(user=request.user)
+                VacationHistory.get_data(vacationhistory)
                 return redirect('list')
         else:
             form = SpecialForm()

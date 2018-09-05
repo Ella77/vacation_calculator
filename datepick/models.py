@@ -66,7 +66,7 @@ class Vacation(models.Model):
 
     def clean(self):
         if self.status in [1, 2, 3]:
-            events = Vacation.objects.filter(author = self.author_id).exclude(pk = self.pk).filter(status =1 or 2 or 3)
+            events = Vacation.objects.filter(author = self.author).exclude(pk = self.pk).filter(status =1 or 2 or 3)
             if events.exists():
                 for event in events:
                     if self.check_overlap_half(event.start,event.status,self.start,self.status):
@@ -83,7 +83,7 @@ class Vacation(models.Model):
             if self.end < self.start:
                 raise ValidationError('시작일 이후 날짜를 설정해주세요')
 
-            events = Vacation.objects.filter(author=self.author_id).exclude(pk = self.pk).filter(status =0 or 4 or 5)
+            events = Vacation.objects.filter(author=self.author).exclude(pk = self.pk).filter(status =0 or 4 or 5)
             if events.exists():
                 for event in events:
                     if self.check_overlap(event.start, event.end, self.start, self.end):
@@ -98,10 +98,44 @@ class Vacation(models.Model):
 class VacationHistory(models.Model):
     user = models.ForeignKey(User, on_delete= models.CASCADE)
     total = models.FloatField(default=0.0)
-    used = models.FloatField(default=0.0)
-    available = models.FloatField(default=0.0)
-    created = models.DateTimeField(default=timezone.now)
+    thisyear_used = models.FloatField(default=0.0)
+    thisyear_left = models.FloatField(default=0.0)
+    special_day = models.FloatField(default=0.0)
+    replace_workday = models.FloatField(default=0.0)
+    workingdays_with = models.IntegerField(default =0)
 
+    def get_data(self):
+
+        latestjobstart = Employee.objects.get(users=self.user)
+        thisyear_available = latestjobstart.get_current_vacation()
+        self.total = round(Calculate_Total_Vacation_Until_This_Year(latestjobstart.jobstart), 1)
+        self.workingdays_with = latestjobstart.get_keep()
+        queryset = Vacation.objects.filter(author=self.user)
+        queryset = queryset.filter(Q(Q(start__year=timezone.now().year) | Q(end__year=timezone.now().year)))
+        queryset = queryset.filter(regi_status=True)
+        special, replace, used = [0, 0, 0]
+        for final in queryset:
+            if final.status == 4:
+                special += final.bus_day_count
+            elif final.status == 5:
+                replace += final.bus_day_count
+            elif (final.status == 0):
+                if final.start.year == final.end.year:
+                    used += final.bus_day_count
+                else:
+                    if final.start.year == timezone.now().year:
+                        end_of_year = date(final.start.year, 12, 31)
+                        used += numpy.busday_count(final.start, end_of_year + timedelta(1))
+                    else:
+                        start_of_year = date(final.end.year, 1, 1)
+                        used += numpy.busday_count(start_of_year, final.end + timedelta(1))
+            else:
+               used += final.bus_day_count
+        self.thisyear_left = thisyear_available - used + replace
+        self.thisyear_used = used
+        self.special_day =special
+        self.replace_workday = replace
+        self.save()
 
 class Employee(models.Model):
     users = models.OneToOneField(User, related_name='employee', on_delete=models.CASCADE)

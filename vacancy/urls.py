@@ -51,5 +51,6 @@ urlpatterns = [
     url(r'^$',confirm,name='confirm'),
     url(r'^vacation/<int:pk>', VacationListbyAuthor.as_view(), name='vacation-by-author'),
     url(r'^vacations/', VacationerListView.as_view(), name= 'bloggers'),
+    url(r'^chart/$',chart,name='chart'),
 
 ]
